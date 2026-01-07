@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Send, RotateCcw, X } from 'lucide-react';
 import headerLogo from 'figma:asset/64af546cfa0dec8b131a482647de406152177ed6.png';
 
+
 interface Message {
   id: string;
   text: string;
@@ -57,7 +58,7 @@ export default function App() {
     setInputValue('');
     setIsThinking(true);
 
-    // Check if question is off-topic (doesn't contain GÉANT-related keywords)
+    // Check if question is off-topic (doesn't contain GÉANT-related keywords!)
     const geantKeywords = ['géant', 'geant', 'surf', 'university', 'universities', 'network', 'research', 'education', 'report', 'case study', 'annual report', 'collaborate', 'collaboration'];
     const isOffTopic = !geantKeywords.some(keyword => userQuestion.includes(keyword));
 
