@@ -3,6 +3,22 @@ import uuid
 import streamlit as st
 import streamlit.components.v1 as components
 
+from pathlib import Path
+
+ASSETS = Path(__file__).parent / "assets"
+HEADER_IMG = ASSETS / "geantIcon.png"
+
+import base64
+
+def img_to_data_uri(path):
+    data = path.read_bytes()
+    b64 = base64.b64encode(data).decode("utf-8")
+    # change png -> svg/jpeg if needed
+    return f"data:image/png;base64,{b64}"
+
+HEADER_URI = img_to_data_uri(HEADER_IMG)
+
+
 # -----------------------------
 # Page config
 # -----------------------------
@@ -18,7 +34,7 @@ BOT_TEXT = "#464646"
 st.markdown(
     f"""
     <style>
-      .stApp {{ background: #ffffff; }} /* ensure overall page is white */
+      .stApp {{ background: #ffffff; }}
       .block-container {{ padding-top: 1.0rem; max-width: 720px; }}
       #MainMenu, footer, header {{ visibility: hidden; }}
 
@@ -68,77 +84,56 @@ st.markdown(
         background: rgba(129,9,71,0.10);
       }}
 
-      /* Add separator line above input */
-      .stChatInput {{
-        border-top: 1px solid rgba(70,70,70,0.12) !important;
-        padding-top: 16px !important;
-      }}
+      /* Kill Streamlit's default grey behind chat input */
+        section[data-testid="stChatInput"] > div {{
+        background: #ffffff !important;
+        }}
 
-      /* Fix chat input styling */
+        section[data-testid="stChatInput"] > div > div {{
+        background: #ffffff !important;
+        }}
+
       section[data-testid="stChatInput"] {{
-        background: transparent !important;
-        border: none !important;
-        padding-top: 16px !important;
-      }}
-      
-      section[data-testid="stChatInput"] > div {{
-        background: transparent !important;
-      }}
-
-      /* Input field container */
-      section[data-testid="stChatInput"] > div > div {{
-        background: transparent !important;
+        background: #ffffff !important;
+        border-top: 2px solid #ffffff !important;
+        padding: 14px 16px !important;
       }}
 
       section[data-testid="stChatInput"] textarea {{
         border-radius: 999px !important;
-        border: 2px solid {PRIMARY} !important;
-        background: white !important;
+        border: 2px solid #ffffff !important;
+        background: #ffffff !important;
         font-size: 18px !important;
-        padding: 14px 20px !important;
-        transition: all 0.2s ease !important;
-        color: #333 !important;
-      }}
-
-      section[data-testid="stChatInput"] textarea:focus {{
-        border: 2px solid {PRIMARY} !important;
-        box-shadow: none !important;
-        outline: none !important;
+        padding: 14px 22px !important;
+        color: #ffffff !important;
+        caret-color: #ffffff !important;
       }}
 
       section[data-testid="stChatInput"] textarea::placeholder {{
-        color: #999 !important;
+        color: #ffffff !important;
       }}
 
-      /* Style the send button */
-      section[data-testid="stChatInput"] button[kind="primary"],
-      section[data-testid="stChatInput"] button[data-testid="stChatInputSubmitButton"] {{
-        border-radius: 50% !important;
-        background: {PRIMARY} !important;
-        border: none !important;
+      section[data-testid="stChatInput"] textarea:focus {{
+        border-color: #ffffff !important;
+        box-shadow: 0 0 0 2px rgba(129,9,71,0.15) !important;
+        outline: none !important;
+      }}
+
+      section[data-testid="stChatInput"] button {{
+        background: #ffffff !important;
+        border-radius: 999px !important;
         width: 48px !important;
         height: 48px !important;
         min-width: 48px !important;
         min-height: 48px !important;
         padding: 0 !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        margin-left: 10px !important;
       }}
 
-      section[data-testid="stChatInput"] button[kind="primary"]:hover,
-      section[data-testid="stChatInput"] button[data-testid="stChatInputSubmitButton"]:hover {{
-        opacity: 0.85 !important;
-        background: {PRIMARY} !important;
-      }}
-
-      section[data-testid="stChatInput"] button[kind="primary"] svg,
-      section[data-testid="stChatInput"] button[data-testid="stChatInputSubmitButton"] svg {{
-        width: 24px !important;
-        height: 24px !important;
-        color: white !important;
-        fill: white !important;
+      section[data-testid="stChatInput"] button svg {{
+        width: 22px !important;
+        height: 22px !important;
+        color: #ffffff !important;
+        fill: #ffffff !important;
       }}
 
       .center-screen {{
@@ -177,10 +172,10 @@ def init_state():
         st.session_state.is_loading_link = False
     if "is_thinking" not in st.session_state:
         st.session_state.is_thinking = False
-    if "hide_recommendations" not in st.session_state:
-        st.session_state.hide_recommendations = False
     if "messages" not in st.session_state:
         st.session_state.messages = []
+    if "show_buttons" not in st.session_state:
+        st.session_state.show_buttons = True
 
     if not st.session_state.messages:
         st.session_state.messages = [
@@ -207,9 +202,7 @@ def restart_chat():
         {"id": str(uuid.uuid4()), "text": "How can I help you today?", "sender": "bot"},
     ]
     st.session_state.is_thinking = False
-    st.session_state.hide_recommendations = False
-    if "_recommendation_last" in st.session_state:
-        del st.session_state["_recommendation_last"]
+    st.session_state.show_buttons = True
 
 def close_chat():
     st.session_state.is_open = False
@@ -220,7 +213,7 @@ def reopen_chat():
 def send_logic(user_text: str):
     add_user_message(user_text)
     st.session_state.is_thinking = True
-    st.session_state.hide_recommendations = True
+    st.session_state.show_buttons = False
     st.rerun()
 
 # -----------------------------
@@ -255,27 +248,32 @@ if not st.session_state.is_open:
     st.markdown("</div></div>", unsafe_allow_html=True)
     st.stop()
 
+
+
+st.markdown('<div class="app-canvas">', unsafe_allow_html=True)
 # -----------------------------
 # Main shell
 # -----------------------------
 st.markdown('<div class="geant-shell">', unsafe_allow_html=True)
 
-# Header bar (use keys to avoid collisions)
+# Header bar
 h1, h2, h3 = st.columns([1, 6, 1])
 with h1:
     if st.button("↻", help="Restart chat", key="restart"):
         restart_chat()
         st.rerun()
+
 with h2:
     st.markdown(
         f"""
-        <div class="geant-title" style="justify-content:center;">
-          <div class="geant-badge">✨</div>
-          <div>GÉANT AI</div>
+        <div style="width:100%; display:flex; justify-content:center; align-items:center; padding-top:6px;">
+            <img src="{HEADER_URI}" style="height:46px;" />
         </div>
         """,
         unsafe_allow_html=True,
     )
+
+
 with h3:
     if st.button("✕", help="Close chat", key="close"):
         close_chat()
@@ -364,7 +362,7 @@ def render_messages_html(messages, is_thinking: bool) -> str:
         """
 
     if is_thinking:
-        html += f"""
+        html += """
             <div class="msg-row msg-bot" style="margin-top: 10px;">
                 <div class="bubble bubble-bot" style="display:flex; gap:8px; align-items:center; padding: 14px;">
                     <span class="dot dot1"></span>
@@ -377,14 +375,12 @@ def render_messages_html(messages, is_thinking: bool) -> str:
     html += """
         </div>
         <script>
-            // Send height to parent
             function updateHeight() {
                 const container = document.getElementById('msgContainer');
                 const height = container.offsetHeight;
                 window.parent.postMessage({type: 'streamlit:setFrameHeight', height: height}, '*');
             }
             updateHeight();
-            // Update again after images/content loads
             setTimeout(updateHeight, 100);
         </script>
     </body>
@@ -392,22 +388,18 @@ def render_messages_html(messages, is_thinking: bool) -> str:
     """
     return html
 
-# Calculate approximate height based on message count
-msg_count = len(st.session_state.messages)
-if st.session_state.is_thinking:
-    msg_count += 1
-# Approximate: each message ~60px, plus padding
-approx_height = max(100, min(500, (msg_count * 60) + 32))
+# Approximate height based on message count
+msg_count = len(st.session_state.messages) + (1 if st.session_state.is_thinking else 0)
+approx_height = max(120, min(520, (msg_count * 64) + 48))
 
-# Render messages using iframe
 components.html(
     render_messages_html(st.session_state.messages, st.session_state.is_thinking),
     height=approx_height,
     scrolling=False,
 )
 
-# Recommendation buttons (clickable) - Place inside the shell
-if len(st.session_state.messages) <= 2 and not st.session_state.is_thinking and not st.session_state.hide_recommendations:
+# Recommendation buttons
+if st.session_state.show_buttons and not st.session_state.is_thinking:
     st.markdown('<div style="padding: 0 16px 16px 16px;">', unsafe_allow_html=True)
     recs = [
         "Please summarize the SURF case study for me",
@@ -416,13 +408,13 @@ if len(st.session_state.messages) <= 2 and not st.session_state.is_thinking and 
     ]
     for i, r in enumerate(recs):
         if st.button(r, key=f"rec_{i}"):
+            st.session_state.show_buttons = False
             add_user_message(r)
             st.session_state.is_thinking = True
-            st.session_state.hide_recommendations = True
             st.rerun()
-    st.markdown('</div>', unsafe_allow_html=True)
+    st.markdown("</div>", unsafe_allow_html=True)
 
-# If thinking, simulate a short delay then add placeholder answer and stop thinking
+# Thinking -> placeholder answer
 if st.session_state.is_thinking:
     time.sleep(1.2)
     add_bot_message(PLACEHOLDER_ANSWER)
@@ -431,6 +423,8 @@ if st.session_state.is_thinking:
 
 # Close shell div
 st.markdown("</div>", unsafe_allow_html=True)
+
+
 
 # Input
 prompt = st.chat_input("Ask anything ...")
