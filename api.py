@@ -3,6 +3,8 @@ from flask_cors import CORS, cross_origin
 from langchain_core.messages import HumanMessage, AIMessage
 import os
 import logging
+from dotenv import load_dotenv
+load_dotenv()  # Load .env file
 
 # Import from rag_module
 from rag_module import create_rag_chain, DATA_PATH, MAX_HISTORY_MESSAGES
@@ -17,8 +19,18 @@ logging.getLogger('flask_cors').level = logging.DEBUG
 # Create Flask app
 app = Flask(__name__)
 
-# Enable CORS
-CORS(app, resources={r"/*": {"origins": "*"}})
+# Correct CORS configuration
+CORS(
+    app,
+    resources={
+        r"/api/*": {
+            "origins": "https://geantai-prod-4nhenzedd-maximilian-wilkes-projects.vercel.app"
+        }
+    },
+    supports_credentials=True,
+    allow_headers="*",
+    methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+)
 
 # Session management
 chat_histories = {}
