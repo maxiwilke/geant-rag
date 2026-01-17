@@ -1,10 +1,10 @@
 """
 Core RAG module - contains all the RAG logic
-Used by both main.py (CLI) and api.py (Web API)
+Updated to use Groq API instead of local Ollama
 """
 
-from langchain_ollama.llms import OllamaLLM
-from langchain_ollama import OllamaEmbeddings
+from langchain_groq import ChatGroq
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.messages import HumanMessage, AIMessage
@@ -21,8 +21,12 @@ SCRIPT_DIR = Path(__file__).parent.absolute()
 CHROMA_DB_PATH = SCRIPT_DIR / "chroma_db"
 DATA_PATH = SCRIPT_DIR / "Data"
 
-LLM_MODEL = "llama3.2"
-EMBEDDING_MODEL = "mxbai-embed-large"
+# Groq configuration
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+GROQ_MODEL = "llama-3.3-70b-versatile"  # Fast and good quality
+
+# Embedding model (free from HuggingFace)
+EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 
 # Chat history configuration
 MAX_HISTORY_MESSAGES = 6
@@ -54,7 +58,7 @@ def build_local_pdf_url(source_path: str) -> Optional[str]:
         rel = path.relative_to(DATA_PATH.resolve())
     except Exception:
         return None
-    return f"http://localhost:5000/api/pdf/{urllib.parse.quote(rel.as_posix())}"
+    return f"https://geant-rag.onrender.com/api/pdf/{urllib.parse.quote(rel.as_posix())}"
 
 def format_chat_history(chat_history: List) -> str:
     """Format chat history into a readable string for context"""
@@ -71,8 +75,12 @@ def format_chat_history(chat_history: List) -> str:
 
 def setup_vector_db(rebuild: bool = False):
     """Load documents from Data folder and create/load vector database"""
-    # Lazy initialize embeddings here
-    embeddings = OllamaEmbeddings(model=EMBEDDING_MODEL)
+    print("Initializing embeddings (this may take a moment on first run)...")
+    embeddings = HuggingFaceEmbeddings(
+        model_name=EMBEDDING_MODEL,
+        model_kwargs={'device': 'cpu'},
+        encode_kwargs={'normalize_embeddings': True}
+    )
     
     if os.path.exists(CHROMA_DB_PATH) and not rebuild:
         print("Loading existing vector database...")
@@ -143,9 +151,18 @@ def setup_vector_db(rebuild: bool = False):
     return vectordb
 
 def create_rag_chain(rebuild: bool = False):
-    """Create the RAG chain with chat history support"""
-    # Lazy initialize LLM here
-    llm = OllamaLLM(model=LLM_MODEL)
+    """Create the RAG chain with chat history support using Groq"""
+    if not GROQ_API_KEY:
+        raise ValueError("GROQ_API_KEY environment variable not set!")
+    
+    # Initialize Groq LLM
+    llm = ChatGroq(
+        model=GROQ_MODEL,
+        api_key=GROQ_API_KEY,
+        temperature=0.7,
+        max_tokens=1024
+    )
+    
     vectordb = setup_vector_db(rebuild=rebuild)
     retriever = vectordb.as_retriever(search_kwargs={"k": RETRIEVAL_K})
     
@@ -157,7 +174,7 @@ Purpose: Supporting GÉANT staff with knowledge management
 Personality: Friendly, motivated, positive, and helpful
 Age: 1 month
 Location: Amsterdam
-Environment: Running in Maximilian's MacBook virtual environment
+Environment: Running on Render cloud infrastructure
 
 CONVERSATION HISTORY
 {chat_history}
@@ -222,7 +239,7 @@ ANSWER:"""
         
         formatted_history = format_chat_history(chat_history)
         
-        # Generate answer using LLM
+        # Generate answer using Groq
         result = prompt | llm
         answer = result.invoke({
             "context": context,
@@ -231,6 +248,9 @@ ANSWER:"""
             "source_list": source_list
         })
         
-        return answer, docs
+        # Extract text from AIMessage
+        answer_text = answer.content if hasattr(answer, 'content') else str(answer)
+        
+        return answer_text, docs
     
     return rag_chain
