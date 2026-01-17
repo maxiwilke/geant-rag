@@ -1,17 +1,7 @@
 from flask import Flask, request, jsonify, send_from_directory
-from flask_cors import CORS
-from langchain_ollama.llms import OllamaLLM
-from langchain_ollama import OllamaEmbeddings
-from langchain_chroma import Chroma
-from langchain_core.prompts import ChatPromptTemplate
+from flask_cors import CORS, cross_origin
 from langchain_core.messages import HumanMessage, AIMessage
-from langchain_community.document_loaders import DirectoryLoader, PyPDFLoader
-from langchain_community.document_loaders.text import TextLoader
-from langchain_text_splitters import RecursiveCharacterTextSplitter
 import os
-import urllib.parse
-from pathlib import Path
-from typing import Optional
 import logging
 
 # Import from rag_module
@@ -21,16 +11,14 @@ from rag_module import create_rag_chain, DATA_PATH, MAX_HISTORY_MESSAGES
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+# Enable CORS logging
+logging.getLogger('flask_cors').level = logging.DEBUG
+
 # Create Flask app
 app = Flask(__name__)
 
-# SIMPLE CORS - as recommended in Flask-CORS docs
-CORS(app)
-cors = CORS(app, resources={
-    r"/*": {
-        "origins": "*"
-    }
-})
+# Enable CORS
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 # Session management
 chat_histories = {}
@@ -48,8 +36,10 @@ def get_rag_chain():
 # ---------------- API ENDPOINTS
 
 @app.route('/', methods=['GET'])
+@cross_origin()
 def root():
     """Root endpoint"""
+    logger.info("Root endpoint called")
     return jsonify({
         'status': 'online',
         'message': 'GEANT RAG API is running',
@@ -58,12 +48,15 @@ def root():
     }), 200
 
 @app.route('/api/health', methods=['GET'])
+@cross_origin()
 def health():
     """Health check endpoint - returns immediately without loading RAG"""
     logger.info("Health check requested")
+    logger.info(f"Request headers: {dict(request.headers)}")
     return jsonify({'status': 'healthy', 'message': 'API is running'}), 200
 
 @app.route('/api/chat', methods=['POST'])
+@cross_origin()
 def chat():
     """Main chat endpoint"""
     try:
@@ -120,6 +113,7 @@ def chat():
         return jsonify({'error': str(e)}), 500
 
 @app.route('/api/clear_history', methods=['POST'])
+@cross_origin()
 def clear_history():
     """Clear chat history for a session"""
     try:
@@ -137,6 +131,7 @@ def clear_history():
         return jsonify({'error': str(e)}), 500
 
 @app.route('/api/pdf/<path:filename>', methods=['GET'])
+@cross_origin()
 def serve_pdf(filename):
     """Serve PDF files"""
     if not filename.lower().endswith('.pdf'):
@@ -153,4 +148,4 @@ if __name__ == '__main__':
     app.run(debug=False, host='0.0.0.0', port=port)
 
 # Log initialization
-logger.info("Flask app initialized with Flask-CORS")
+logger.info("Flask app initialized with Flask-CORS and @cross_origin decorators")
