@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # GEANT RAG Chatbot
 
 A Retrieval-Augmented Generation (RAG) chatbot for querying GEANT project documents using LangChain. Includes a Flask API and a React web UI, plus a CLI and Streamlit UI.
@@ -139,3 +140,35 @@ Please refer to the LICENSE file for details.
 - The vector database is persisted in `chroma_db/` for performance
 - First run will take longer as it processes all documents
 - Ensure sufficient disk space for the vector database
+=======
+# React Chatbot UI
+
+This folder contains the React (Vite) web UI for the GEANT RAG chatbot.
+
+## Prerequisites
+
+- Node.js (https://nodejs.org)
+- The Flask API running from the project root (`python api.py`)
+
+## Run the UI
+
+```bash
+cd react-chatbot
+npm install
+npm run dev
+```
+
+Open the URL shown by Vite (usually `http://localhost:5173`).
+
+## API Configuration
+
+The UI calls the Flask API at:
+
+```
+http://localhost:5000/api/chat
+```
+
+If your API runs on a different host or port, update `API_URL` in:
+
+- `react-chatbot/src/App.tsx`
+>>>>>>> 1e6f372 (react chatbot changes)
