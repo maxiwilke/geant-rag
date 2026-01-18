@@ -8,6 +8,7 @@ from flask_cors import CORS
 from langchain_groq import ChatGroq
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_core.messages import HumanMessage, AIMessage
+from werkzeug.middleware.proxy_fix import ProxyFix
 import os
 import logging
 from dotenv import load_dotenv
@@ -24,11 +25,31 @@ logger = logging.getLogger(__name__)
 # Create Flask app
 app = Flask(__name__)
 
+# CRITICAL: Trust Render's proxy - this fixes CORS on Render
+app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_prefix=1)
+
 # Disable strict slashes - allows /api/chat and /api/chat/ to work the same
 app.url_map.strict_slashes = False
 
-# SIMPLIFIED CORS - Let Flask-CORS handle everything
-CORS(app)
+# BULLETPROOF CORS configuration
+CORS(app, resources={
+    r"/*": {
+        "origins": "*",
+        "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+        "allow_headers": ["Content-Type", "Authorization", "Accept"],
+        "expose_headers": ["Content-Type"],
+        "supports_credentials": False,
+        "max_age": 3600
+    }
+})
+
+# Belt-and-suspenders: Add CORS headers to every response
+@app.after_request
+def add_cors_headers(response):
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    response.headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, DELETE, OPTIONS'
+    response.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization, Accept'
+    return response
 
 # Session management
 chat_histories = {}
@@ -67,9 +88,11 @@ def get_rag_chain():
     return rag_chain
 
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['GET', 'OPTIONS'])
 def root():
     """Root endpoint to verify server is running"""
+    if request.method == 'OPTIONS':
+        return '', 204
     return jsonify({
         'status': 'online',
         'message': 'GEANT RAG API is running',
@@ -78,13 +101,17 @@ def root():
     }), 200
 
 
-@app.route('/api/health', methods=['GET'])
+@app.route('/api/health', methods=['GET', 'OPTIONS'])
 def health():
+    if request.method == 'OPTIONS':
+        return '', 204
     return jsonify({'status': 'ok', 'model': 'groq'}), 200
 
 
-@app.route('/api/chat', methods=['POST'])
+@app.route('/api/chat', methods=['POST', 'OPTIONS'])
 def chat():
+    if request.method == 'OPTIONS':
+        return '', 204
     try:
         data = request.json
         question = data.get('message', '').strip()
@@ -130,9 +157,11 @@ def chat():
         return jsonify({'error': str(e)}), 500
 
 
-@app.route('/api/pdf/<path:filename>', methods=['GET'])
+@app.route('/api/pdf/<path:filename>', methods=['GET', 'OPTIONS'])
 def serve_pdf(filename):
     """Serve PDF files from the Data directory"""
+    if request.method == 'OPTIONS':
+        return '', 204
     try:
         return send_from_directory(DATA_PATH, filename)
     except Exception as e:
