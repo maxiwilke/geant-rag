@@ -1,14 +1,13 @@
 """
 API for deployment (Render/Vercel) - Uses Groq instead of Ollama
-Simplified CORS configuration to avoid conflicts
+Matches the working localhost configuration
 """
 
 from flask import Flask, request, jsonify, send_from_directory
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 from langchain_groq import ChatGroq
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_core.messages import HumanMessage, AIMessage
-from werkzeug.middleware.proxy_fix import ProxyFix
 import os
 import logging
 from dotenv import load_dotenv
@@ -22,34 +21,12 @@ from rag_module import create_rag_chain, DATA_PATH, MAX_HISTORY_MESSAGES
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+# Enable CORS logging
+logging.getLogger('flask_cors').level = logging.DEBUG
+
 # Create Flask app
 app = Flask(__name__)
-
-# CRITICAL: Trust Render's proxy - this fixes CORS on Render
-app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_prefix=1)
-
-# Disable strict slashes - allows /api/chat and /api/chat/ to work the same
-app.url_map.strict_slashes = False
-
-# BULLETPROOF CORS configuration
-CORS(app, resources={
-    r"/*": {
-        "origins": "*",
-        "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-        "allow_headers": ["Content-Type", "Authorization", "Accept"],
-        "expose_headers": ["Content-Type"],
-        "supports_credentials": False,
-        "max_age": 3600
-    }
-})
-
-# Belt-and-suspenders: Add CORS headers to every response
-@app.after_request
-def add_cors_headers(response):
-    response.headers['Access-Control-Allow-Origin'] = '*'
-    response.headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, DELETE, OPTIONS'
-    response.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization, Accept'
-    return response
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 # Session management
 chat_histories = {}
@@ -88,11 +65,54 @@ def get_rag_chain():
     return rag_chain
 
 
-@app.route('/', methods=['GET', 'OPTIONS'])
+@app.route('/api/chat', methods=['POST'])
+@cross_origin()
+def chat():
+    data = request.json
+    question = data.get('message', '').strip()
+    session_id = data.get('session_id', 'default')
+
+    if not question:
+        return jsonify({'error': 'No message provided'}), 400
+
+    chain = get_rag_chain()
+    if chain is None:
+        return jsonify({'error': 'RAG chain not initialized'}), 500
+
+    if session_id not in chat_histories:
+        chat_histories[session_id] = []
+
+    chat_history = chat_histories[session_id]
+
+    logger.info(f"Processing question: {question[:50]}...")
+    answer, docs = chain(question, chat_history)
+
+    chat_history.append(HumanMessage(content=question))
+    chat_history.append(AIMessage(content=answer))
+
+    if len(chat_history) > MAX_HISTORY_MESSAGES:
+        chat_histories[session_id] = chat_history[-MAX_HISTORY_MESSAGES:]
+
+    sources = []
+    if docs:
+        for doc in docs:
+            source = doc.metadata.get('source', 'Unknown')
+            source = source.replace('\\', '/').split('/')[-1]
+            url = doc.metadata.get('url', None)
+            sources.append({'name': source, 'url': url})
+
+    return jsonify({'answer': answer, 'sources': sources, 'session_id': session_id}), 200
+
+
+@app.route('/api/health', methods=['GET'])
+@cross_origin()
+def health():
+    return jsonify({'status': 'ok', 'model': 'groq'}), 200
+
+
+@app.route('/', methods=['GET'])
+@cross_origin()
 def root():
-    """Root endpoint to verify server is running"""
-    if request.method == 'OPTIONS':
-        return '', 204
     return jsonify({
         'status': 'online',
         'message': 'GEANT RAG API is running',
@@ -101,67 +121,10 @@ def root():
     }), 200
 
 
-@app.route('/api/health', methods=['GET', 'OPTIONS'])
-def health():
-    if request.method == 'OPTIONS':
-        return '', 204
-    return jsonify({'status': 'ok', 'model': 'groq'}), 200
-
-
-@app.route('/api/chat', methods=['POST', 'OPTIONS'])
-def chat():
-    if request.method == 'OPTIONS':
-        return '', 204
-    try:
-        data = request.json
-        question = data.get('message', '').strip()
-        session_id = data.get('session_id', 'default')
-
-        if not question:
-            return jsonify({'error': 'No message provided'}), 400
-
-        chain = get_rag_chain()
-        if chain is None:
-            return jsonify({'error': 'RAG chain not initialized'}), 500
-
-        if session_id not in chat_histories:
-            chat_histories[session_id] = []
-
-        chat_history = chat_histories[session_id]
-
-        logger.info(f"Processing question: {question[:50]}...")
-        answer, docs = chain(question, chat_history)
-
-        chat_history.append(HumanMessage(content=question))
-        chat_history.append(AIMessage(content=answer))
-
-        if len(chat_history) > MAX_HISTORY_MESSAGES:
-            chat_histories[session_id] = chat_history[-MAX_HISTORY_MESSAGES:]
-
-        sources = []
-        if docs:
-            for doc in docs:
-                source = doc.metadata.get('source', 'Unknown')
-                source = source.replace('\\', '/').split('/')[-1]
-                url = doc.metadata.get('url', None)
-                sources.append({'name': source, 'url': url})
-
-        return jsonify({
-            'answer': answer,
-            'sources': sources,
-            'session_id': session_id
-        }), 200
-    
-    except Exception as e:
-        logger.error(f"Error in chat endpoint: {str(e)}", exc_info=True)
-        return jsonify({'error': str(e)}), 500
-
-
-@app.route('/api/pdf/<path:filename>', methods=['GET', 'OPTIONS'])
+@app.route('/api/pdf/<path:filename>', methods=['GET'])
+@cross_origin()
 def serve_pdf(filename):
     """Serve PDF files from the Data directory"""
-    if request.method == 'OPTIONS':
-        return '', 204
     try:
         return send_from_directory(DATA_PATH, filename)
     except Exception as e:
@@ -171,19 +134,13 @@ def serve_pdf(filename):
 
 if __name__ == '__main__':
     logger.info("Starting Flask server (deployment mode)...")
-    
-    # Initialize the RAG chain on startup
-    try:
-        get_rag_chain()
-    except Exception as e:
-        logger.error(f"Failed to initialize RAG chain: {str(e)}")
+    get_rag_chain()  # Initialize RAG on startup
     
     # Get port from environment variable (Render sets this)
     port = int(os.getenv('PORT', 5000))
     
-    # Run the Flask app
     app.run(
         host='0.0.0.0',
         port=port,
-        debug=False  # Set to False in production
+        debug=False  # False in production for security
     )
