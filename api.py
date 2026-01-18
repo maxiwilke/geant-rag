@@ -23,7 +23,16 @@ logging.getLogger('flask_cors').level = logging.DEBUG
 
 # Create Flask app
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}})
+
+# Enhanced CORS configuration
+CORS(app, 
+     resources={r"/*": {
+         "origins": "*",
+         "methods": ["GET", "POST", "OPTIONS"],
+         "allow_headers": ["Content-Type", "Authorization"],
+         "expose_headers": ["Content-Type"],
+         "supports_credentials": False
+     }})
 
 # Session management
 chat_histories = {}
@@ -112,6 +121,19 @@ def chat():
     except Exception as e:
         logger.error(f"Error in chat endpoint: {str(e)}", exc_info=True)
         return jsonify({'error': str(e)}), 500
+
+
+@app.route('/', methods=['GET', 'OPTIONS'])
+def root():
+    """Root endpoint to verify server is running"""
+    if request.method == 'OPTIONS':
+        return '', 204
+    return jsonify({
+        'status': 'online',
+        'message': 'GEANT RAG API is running',
+        'version': '1.0',
+        'endpoints': ['/api/health', '/api/chat', '/api/pdf/<filename>']
+    }), 200
 
 
 @app.route('/api/health', methods=['GET', 'OPTIONS'])
