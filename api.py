@@ -2,7 +2,7 @@
 API for deployment (Render/Vercel) - Uses Groq instead of Ollama
 """
 
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, send_from_directory, make_response
 from flask_cors import CORS, cross_origin
 from langchain_groq import ChatGroq
 from langchain_huggingface import HuggingFaceEmbeddings
@@ -19,20 +19,28 @@ from rag_module import create_rag_chain, DATA_PATH, MAX_HISTORY_MESSAGES
 # Setup logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
-logging.getLogger('flask_cors').level = logging.DEBUG
 
 # Create Flask app
 app = Flask(__name__)
 
-# Enhanced CORS configuration
+# CRITICAL: More explicit CORS configuration
 CORS(app, 
      resources={r"/*": {
          "origins": "*",
-         "methods": ["GET", "POST", "OPTIONS"],
-         "allow_headers": ["Content-Type", "Authorization"],
+         "methods": ["GET", "POST", "OPTIONS", "PUT", "DELETE"],
+         "allow_headers": ["Content-Type", "Authorization", "Accept", "Origin"],
          "expose_headers": ["Content-Type"],
-         "supports_credentials": False
+         "supports_credentials": False,
+         "max_age": 3600
      }})
+
+# Add CORS headers to all responses (belt and suspenders approach)
+@app.after_request
+def after_request(response):
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization,Accept,Origin')
+    response.headers.add('Access-Control-Allow-Methods', 'GET,POST,OPTIONS,PUT,DELETE')
+    return response
 
 # Session management
 chat_histories = {}
@@ -74,9 +82,13 @@ def get_rag_chain():
 @app.route('/api/chat', methods=['POST', 'OPTIONS'])
 @cross_origin()
 def chat():
-    # Handle OPTIONS preflight request
+    # Handle OPTIONS preflight request explicitly
     if request.method == 'OPTIONS':
-        return '', 204
+        response = make_response('', 204)
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+        response.headers.add('Access-Control-Allow-Methods', 'POST,OPTIONS')
+        return response
     
     try:
         data = request.json
@@ -127,7 +139,8 @@ def chat():
 def root():
     """Root endpoint to verify server is running"""
     if request.method == 'OPTIONS':
-        return '', 204
+        response = make_response('', 204)
+        return response
     return jsonify({
         'status': 'online',
         'message': 'GEANT RAG API is running',
@@ -139,7 +152,8 @@ def root():
 @app.route('/api/health', methods=['GET', 'OPTIONS'])
 def health():
     if request.method == 'OPTIONS':
-        return '', 204
+        response = make_response('', 204)
+        return response
     return jsonify({'status': 'ok', 'model': 'groq'}), 200
 
 
@@ -147,7 +161,8 @@ def health():
 def serve_pdf(filename):
     """Serve PDF files from the Data directory"""
     if request.method == 'OPTIONS':
-        return '', 204
+        response = make_response('', 204)
+        return response
     try:
         return send_from_directory(DATA_PATH, filename)
     except Exception as e:
