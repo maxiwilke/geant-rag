@@ -134,7 +134,8 @@ def serve_pdf(filename):
 
 if __name__ == '__main__':
     logger.info("Starting Flask server (deployment mode)...")
-    get_rag_chain()  # Initialize RAG on startup
+    # DON'T initialize RAG on startup - do it on first request instead
+    # get_rag_chain()  # Commented out - will init on first API call
     
     # Get port from environment variable (Render sets this)
     port = int(os.getenv('PORT', 5000))
