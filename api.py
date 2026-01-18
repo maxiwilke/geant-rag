@@ -24,6 +24,9 @@ logger = logging.getLogger(__name__)
 # Create Flask app
 app = Flask(__name__)
 
+# Disable strict slashes - allows /api/chat and /api/chat/ to work the same
+app.url_map.strict_slashes = False
+
 # SIMPLIFIED CORS - Let Flask-CORS handle everything
 CORS(app)
 
