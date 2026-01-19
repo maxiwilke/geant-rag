@@ -1,0 +1,22 @@
+URL: https://connect.geant.org/2025/06/10/building-a-strategic-security-alliance-for-the-future-of-nren-security
+TITLE: Building a strategic security alliance for the future of NREN security
+
+In a significant move to bolster the security of the UK’s tertiary education and research sectors,
+Jisc
+, who provides the UK NREN affectionately known as ‘Janet’, has launched a Security Operations Centre (SOC).
+The SOC will relieve pressure on internal teams through its state-of-the-art technology and specialist expertise
+providing 24/7 protection, threat detection, and rapid incident response. Because of our visibility of the ‘Janet’ network we can detect and contain cyber threats faster, minimising impact and disruption to learning and research. This is a vital step in enhancing the protection of critical infrastructure against the ever-evolving landscape of cyber threats.
+We have worked incredibly hard to deliver our SOC but recognise that we cannot stand still. Threat actors continue to develop their capabilities at pace, deploying attacks with ever-increasing sophistication and intensity. At the same time, our members need us to improve threat detection, incident response times, and seek efficiencies. We see comprehensive, trusted, and verified threat intelligence as the cornerstone of our approach to meeting this challenge.
+However, we know we aren’t operating in isolation. Individually, it can be challenging for NRENs to match the rapidity and scale of attacks on research and education. But through collaboration, we can defend as one. We envision a future where NRENs around the world build a coalition of the willing on security policy – an alliance where sharing critical threat intelligence (CTI) provides a broader, agile, and more effective threat intelligence network in a time of rapidly evolving geopolitical tension. By building trust between NRENs, agreeing on standards and policies, and integrating diverse threat data from multiple international sources, we can all use CTI to sustainably protect global research and our respective national infrastructures.
+We are fortunate that NREN security cooperation is already happening at the operational level – CSIRTs collaborate with each other informally, and there is great work on security underway in GN5-2, the current iteration of the GÉANT project. But we should be open to including the whole NREN community. What excites us most about TNC is the opportunity to engage with global NREN leaders on the strategic future of security. This year, Jisc’s CEO Heidi Fraser-Krauss will lead a discussion in the CEO Track, focusing on catalysing an NREN security policy alliance – an overall agreement for cooperation on security, paving the way for greater collaboration and sharing of CTI.
+It is an exciting time, and we encourage all CEOs to engage with the challenge and collaborate on a strategy that builds on our collective strengths.
+For more information or to get involved, please contact us at
+international@jisc.ac.uk
+.
+This article is featured on CONNECT49, the latest issue of the GÉANT CONNECT Magazine!
+Read the full online magazine here
+Tags
+CONNECT49
+Jisc
+security
+SOC
