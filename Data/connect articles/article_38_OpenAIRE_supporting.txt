@@ -1,0 +1,60 @@
+URL: https://connect.geant.org/2025/06/10/openaire-supporting-the-future-of-scholarly-communication-one-e-infrastructure-at-a-time
+TITLE: OpenAIRE: supporting the future of scholarly communication, one e-infrastructure at a time
+
+Established in 2018 as a legal entity,
+OpenAIRE
+is one of the primary Open Science (OS) e-infrastructure providers in Europe; a non-profit partnership of more than 50 member-organisations aimed at ensuring a permanent open scholarly communication infrastructure to support European research and expand the Open Science landscape.
+To support these goals, OpenAIRE develops and provides a diverse set of
+services
+designed to support and accelerate the adoption of Open Science. The users of OpenAIRE services include researchers, research communities, SME, data providers, policy makers, research-intensive organisations, SMEs, universities, libraries, and citizen scientists. OpenAIRE is also one of the key implementers of the
+European Open Science Cloud (EOSC).
+With more than 15 different services, OpenAIRE provides support in publication and data sharing, building infrastructure and monitoring Open Science, as well as assisting organisations with their transition towards Open Science.
+In this issue of the GÉANT CONNECT Magazine, we would like to introduce to the GÉANT community some of the more prominent OpenAIRE services:
+The
+OpenAIRE Graph
+is one of the world’s largest research knowledge graphs, interlinking metadata from over 100,000 trusted sources. Going beyond publications, the Graph includes data, software, and other research outputs, making it a cornerstone of the European Open Science Cloud (EOSC).
+OpenAIRE PROVIDE
+enables repositories, journals, and data sources to register and share metadata within the OpenAIRE Graph. It facilitates interoperability ensuring compliance with OpenAIRE guidelines and enhancing the visibility and discoverability of research outputs across trusted scholarly infrastructures.
+OpenAIRE MONITOR
+provides funders, institutions, and research initiatives with dynamic dashboards to track Open Science adoption, research impact, and strategic alignment. Users can customize indicators, visualize trends, and gain actionable insights on funding, collaborations, and SDGs.
+OpenAIRE CONNECT
+allows research communities and infrastructures to build tailored discovery portals. It improves visibility, facilitates uploads to Zenodo Communities and OpenAIRE compliant repositories, and links outputs to projects, funders, and institutions, enhancing transparency and traceability.
+ARGOS
+is an open platform for creating machine-actionable Data Management Plans (DMPs) aligned with FAIR principles. It supports planning, validation, and publication of DMPs as citable research outputs, ensuring compliance and seamless data stewardship.
+Together, these services help institutions, researchers, and funders transition to a transparent, FAIR, and interconnected research environment.
+OS FAIR 2025
+The
+Open Science Fair (OS FAIR)
+is a bi-annual event dedicated to the development of Open Science. Established and organised by OpenAIRE since 2017, as a means of promoting open scholarly communication and scientific collaboration, this year’s event is co-organised with and hosted by the
+CERN Open Science Office
+.
+The 2025 OS FAIR is focused on spotlighting the power of
+global
+,
+international and cross-regional partnerships
+in shaping the future of Open Science. The title of the event is
+“Fusing Forces – Accelerating Open Science through Collaboration”,
+highlighting the need for collaboration that transcends borders, disciplines, and institutions, uniting diverse perspectives to drive meaningful change to achieve true progress.
+All actors in the OS landscape are welcome to join us at the OS FAIR 2025 event, at
+CERN
+in
+Geneva on September 15-17,
+to explore how
+diverse forms of collaboration
+can accelerate discovery, enhance knowledge accessibility, and create a more transparent and equitable research ecosystem and a more connected scientific community.
+You can follow the OS FAIR 2025 official Social Media accounts (
+LinkedIn
+,
+Bluesky
+,
+Mastodon
+) to keep up with event updates or
+visit the Open Science Fair website
+!
+This article is featured on CONNECT49, the latest issue of the GÉANT CONNECT Magazine!
+Read the full online magazine here
+Tags
+e-infrastructures
+e-Infrastructures Assembly
+Open Science
+OpenAIRE

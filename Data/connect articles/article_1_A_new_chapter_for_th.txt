@@ -1,0 +1,17 @@
+URL: https://connect.geant.org/2025/06/10/a-new-chapter-for-the-compendium-report
+TITLE: A new chapter for the Compendium Report
+
+The GÉANT Compendium of NRENs Report has been renewed and revitalised for 2024, with a new underlying concept dedicated to shining a spotlight on the stories behind the Compendium data.
+Thanks to the rebuilt Compendium website, all the NREN responses to all the questions in the 2024 Survey have been accessible to view and download since February 2025. This means that the Report no longer has to function as the primary method of disseminating the responses and can transition to a more compact format focused on the key developments of 2024.
+A strength of the Compendium is that NRENs have been providing data for many years, allowing for comparisons over time. For example, during the analysis of 2024 data, it became apparent that there seems to have been a growth in the proportion of staff working for NRENs being subcontracted, rather than permanent employees.
+Two NRENs with very different profiles, RedIRIS and SURF, explain how positive factors such as exciting new initiatives, and also challenging factors such as government restrictions on hiring, are driving this trend.
+Security is a key theme running through the report. An article by Belnet explains how they increased their crisis preparedness in recent years, the team behind Security Bootcamps writes about business continuity planning and how their work has grown alongside an increase in NRENs carrying out audits over the years, and a piece on the Trusted Certificate Services reflects on changes in approach to certification.
+Regular readers should not fear however; the most popular features, such as information on NREN budgets, including how they relate to the GDP and population, the sources of funding for NRENs, and staffing rates haven’t gone anywhere. Notably, even though not all NRENs share their annual budget in the Compendium, for those that do, the total combined budget of NRENs in Europe surpassed 1bn EUR for the first time in 2024. A fascinating piece by CARNET explains how they have made use of EU funds to augment their budget and deliver digital transformation in Croatia, and Jisc remind us that when it comes to budgets, it is always important to understand what is being counted.
+It is hoped that the new style of Compendium Report will strike the right balance between showing the big trends sweeping the European NREN landscape, and narrowing in on the emerging, exciting activities of individual NRENs. It should shine a spotlight on NRENs, celebrate their work, and highlight key points of interest from 2024.
+Visit the Compendium website to explore the Compendium Data and download the new Report:
+compendium.geant.org
+This article is featured on CONNECT49, the latest issue of the GÉANT CONNECT Magazine!
+Read the full online magazine here
+Tags
+Compendium
+CONNECT49

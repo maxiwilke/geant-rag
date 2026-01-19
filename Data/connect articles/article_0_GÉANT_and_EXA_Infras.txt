@@ -1,0 +1,66 @@
+URL: https://connect.geant.org/2025/06/10/geant-and-exa-infrastructure-announce-iru-agreement-for-terabit-expansion-of-transatlantic-re-connectivity-between-europe-and-north-america
+TITLE: GÉANT and EXA Infrastructure announce IRU agreement for terabit expansion of transatlantic R&E connectivity between Europe and North America
+
+GÉANT
+and digital infrastructure provider
+EXA Infrastructure
+are excited to announce the signature of an historical long-term agreement to deliver a major expansion of the transatlantic connectivity dedicated to Research and Education (R&E) collaboration between Europe and North America.
+Procured under
+GN5-IC1
+, the ambitious project planning and implementing GÉANT’s intercontinental connectivity investments, the new Indefeasible Right of Use (IRU) contract with EXA Infrastructure grants GÉANT dedicated high-speed capacity via spectrum solutions across two transatlantic cable systems for the next 15 years. In particular, through the agreement GÉANT will establish two new routes between its pan-European network and its partners in North America, acquiring spectrum capacity on two fully diverse transatlantic subsea cables.
+GÉANT’s long-term investment was planned in close coordination with the US Department of Energy’s
+Energy Sciences Network (ESnet)
+, also in the process of upgrading their transatlantic connectivity towards Europe, as well as with the other leading international networking organisations involved in the
+Advanced North Atlantic (ANA) collaboration
+, including
+CANARIE
+(Canada),
+Internet2
+(US),
+KREONET
+(South Korea),
+NORDUnet
+(Nordic countries),
+SURF
+(the Netherlands),
+SINET
+(Japan), and the
+NEA3R project
+coordinated by
+Indiana University
+(US), as well as GÉANT and ESnet.
+The two new routes are expected to become operational in Autumn 2025.
+Supporting transatlantic scientific collaboration, European digital sovereignty, and increased network resilience
+R&E collaboration between Europe and North America has long been a cornerstone of scientific advancement, underpinned by the intercontinental infrastructure provided by the global research and education networking community. The scale of the R&E data exchange between the two continents is made evident by traffic patterns, with North America currently accounting for over 75% of the intercontinental traffic either leaving or entering the pan-European GÉANT network.
+Additionally, GÉANT’s intercontinental traffic with all world regions is also expected to grow significantly in the coming years, driven by global, data-intensive scientific collaborations and projects such as
+CERN’s Large Hadron Collider (LHC)
+, with the
+High Luminosity LHC
+as well as
+ITER
+and the
+SKA Observatory
+due to become operational.
+GÉANT’s connectivity investment with EXA Infrastructure is aimed at responding to this growing demand, with terabit capacity and for the long term. This connectivity upgrade will also ensure European ownership and control of critical infrastructure, strengthening digital and hence strategic autonomy. Moreover, the introduction of two new transatlantic routes will enhance the resilience and robustness of the global fabric of research and education networking, contributing to the backup mechanisms established under the ANA Collaboration and thus supporting service continuity in the face of potential disruptions.
+Investing today to support the scientific breakthroughs of tomorrow
+The agreement constitutes a defining milestone for the GN5-IC1 project, which – having already established a new GÉANT link towards the Asia- Pacific region – is now set to deliver long-term connectivity for GÉANT to a second world region in need of immediate expansion.
+GÉANT’s investment follows from a detailed and comprehensive process of evaluation, assessment and consultation within its community and with its governance bodies and is aligned with the strategic pillars and guidelines for GÉANT’s intercontinental connectivity investments defined by the GN5-IC1 project. The acquisition of spectrum, rather than fixed capacity, will provide GÉANT with a future-proof solution, while maintaining costs controlled over the long-term and allowing scalability in line with the needs of global R&E collaboration.
+“
+We are excited to work with EXA Infrastructure on this fundamental connectivity upgrade with North America, the world region accounting for most of GÉANT’s intercontinental connectivity traffic. This strategic investment, planned in coordination with our community and with our global partners, will ultimately fortify the global research and education networking infrastructure and strengthen European sovereignty and competitiveness by supporting global scientific advancements for the next 15 years.”
+– Lise Fuhr, GÉANT CEO
+“
+We are proud of the trust GÉANT places in our ability to deliver the right solutions, precisely when they are needed. Since 2012, GÉANT has relied on EXA Infrastructure for a key part of its network. That trust has now been further strengthened through this new agreement, which provides GÉANT with dedicated high-speed capacity through advanced spectrum solutions across two diverse, state-of-the-art transatlantic cable systems – ensuring robust, long-term support for the research and education community’s growing connectivity needs.” –
+Jim Fagan, EXA Infrastructure CEO
+About GÉANT
+GÉANT
+is Europe’s leading collaboration on network and related infrastructure and services for the benefit of research and education, contributing to Europe’s economic growth and competitiveness. The organisation develops, delivers, and promotes advanced network and associated e-infrastructure services, and supports innovation and knowledge-sharing amongst its members, partners, and the wider research and education networking community.
+About EXA Infrastructure
+Headquartered in London, EXA Infrastructure is a portfolio company of I Squared Capital and the largest dedicated digital infrastructure platform connecting Europe and North America and owns 151,000 kilometres of fibre network across 34 countries. EXA’s network connects 300 cities and offers 13 Tier 3-equivalent data centres, with sub-sea routes that include five transatlantic cables, one the lowest latency link between Europe and North America. For more information, see
+www.exainfra.net
+This article is featured on CONNECT49, the latest issue of the GÉANT CONNECT Magazine!
+Read the full online magazine here
+Tags
+EXA Infrastructure
+GN5-IC1
+Intercontinental Connectivity
+network

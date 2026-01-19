@@ -1,0 +1,57 @@
+URL: https://connect.geant.org/2025/06/10/turning-ideas-into-innovation-with-the-2024-geant-innovation-programme
+TITLE: Turning ideas into innovation with the 2024 GÉANT Innovation Programme
+
+In 2024, the
+GÉANT Innovation Programme
+awarded funding of up to €50k to six projects. Within this edition, we saw a broader geographic spread of awardees, and four projects were led by women, an increase from previous years. On Wednesday 11 June 2025 at 11:30, the Innovation Programme Spotlight will take place at the Community Hub at TNC25. This is a great opportunity for the six successful projects to share their project highlights.
+Business Platform for OpenStack Clouds (BP-OSC)
+Cloud
+Nino Tsulai,
+Georgian Research and Educational Networking Association (GRENA)
+The BP-OSC project is an innovative SaaS solution that empowers Cloud Service Providers using OpenStack technology. This platform is a unified toolkit, and the funding has supported the development of its components called the OpenStack Solution Kit, with four main components which integrate seamlessly, enabling cloud providers to manage public and private clouds effectively. The platform is now publicly available at
+www.flexostack.io
+.
+Effective Multi-Laser -Beam Transmission for Satellite-Airborne Backhaul Networks
+Network
+Vuong Mai,
+University of Bradford
+The project explores the use of airborne platforms and Low Earth Orbit satellites as next-generation infrastructure for beyond 5G and 6G networks, to overcome the cost and logistical challenges of traditional small-cell base station deployment. It aims to do this by leveraging airborne platforms as flying base stations and using LEO satellites as global backhaul links to enable high-speed, long-distance wireless communications. This technology supports gigabit-per-second data rates and offers high directionality, reducing interference with terrestrial systems.
+Thanks to the funding, a comprehensive theoretical framework for multi-beam laser satellite-airborne backhauling was developed. This included modelling communication channels with environmental factors, designing efficient data allocation strategies for multiple beams, and deriving analytical expressions for key performance metrics – a solid foundation for the pre-development analysis and design of next-generation communication networks that integrate satellite and airborne platforms.
+Mobile App Network trAffic Nutrition fActs (MANANA)
+Network
+Giuseppe Aceto,
+Università degli Studi di Napoli Federico II
+MANANA is a tool designed to provide non-technical users with an analysis of mobile app behaviour, which is easy to understand, specifically regarding privacy features. It provides users with an up to date and personal geopolitical characterisation of mobile apps with the objective to create a diverse and geographically spread community of users who continuously run this tool in the background, analyse network behaviour from their mobile apps, or compare similar apps to make an informed decision on which to adopt. All while collecting useful public data about mobile traffic characteristics. Thanks to the funding, the project created a working prototype system, enabling the implementation of the prototype, starting dissemination, and analysing the first results.
+Explainable AI for DNS Security in Privacy-aware NREN Federations – FedXAI4DNS
+Security
+Mary Grammatikou,
+Institute of Communication and Computer Systems of the National Technical University of Athens
+The FedXAI4DNS project aims to enhance cybersecurity for large-scale networks, including NRENs, by addressing threats from Domain Generation Algorithms (DGAs) used by cybercriminals for botnet communications. DGAs create random DNS names that bypass traditional security systems. To counter these threats, the project employs Federated Learning (FL), which allows organisations to train secure Machine Learning (ML) models collaboratively. It also integrates eXplainable Artificial Intelligence methods values, to make ML decisions more transparent and interpretable, and to help network administrators understand why a domain is flagged as malicious.
+Since receiving funding, the team has created ML classifiers, implemented FL for collaboration across simulated NREN participants, and developed interactive dashboards for administrators to analyse domain patterns and anomalies. This builds trust in AI tools, and ensures regulatory compliance within network security.
+ZoomIn4PinkHats
+Education and Security
+Dona Lolić,
+Croatian Academic and Research Network (CARNET)
+The ZI4PH project was created to promote cybersecurity skills and topics among women in the education system by empowering female mentors and teachers to implement activities for popularising cybersecurity among students, educate them through workshops on different cybersecurity topics, and initiate the creation of peer-to-peer learning projects. Since receiving the funding, the ZI4PH project has achieved notable results, including the engagement of 14 teachers from 12 Croatian cities on cybersecurity topics and the participation of 120 students participated in 14 group projects with a 10% overall increase of female participants in Hacknite CTF competition.
+The funding supported ZI4PH project with its development through mentorship by
+Switch
+.
+Design User Experiences for Digital Identities
+Trust and Identity
+Francisca Martin-Vergara,
+University of Málaga
+, and Esther Ruiz Ben,
+DFN
+The project’s vision is to implement accessible and usable digital identities in the contexts of research and education to increase adoption and avoid exclusion of non-standard target groups. After receiving the funding, a prototype was developed and evaluated based on the results from design thinking workshops with participants from several international NRENs (Spain, Germany, Portugal, Brazil) including diverse user groups (students, administrative personnel, professors, university library coordinators).
+Within the REFEDS community, a working group has been initiated (User Experience with Digital Identities in Research and Education). Another working group application has been submitted for “Accessibility and UX in Wallets” within the GÉANT Trust and Identity Incubator. The vision for creating this group is to raise awareness among new generations of digital designers and developers regarding accessibility and usability topics related to the current development of digital wallets.
+The 2024 GÉANT Innovation Programme has successfully funded and supported a diverse range of projects that are already making a significant impact in their respective areas. From receiving the mentorship, funding, and networking opportunities, these projects have not only achieved their objectives but are also continuing to strengthen our community through innovative ideas.
+Make sure to attend the Innovation Programme Spotlight at TNC25!
+This article is featured on CONNECT49, the latest issue of the GÉANT CONNECT Magazine!
+Read the full online magazine here
+Tags
+cloud
+education
+Innovation Programme
+network
+security
+Trust and Identity

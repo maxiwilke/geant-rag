@@ -1,0 +1,33 @@
+URL: https://connect.geant.org/2025/06/10/pcss-embarks-on-the-road-towards-next-generation-research-infrastructures
+TITLE: PCSS embarks on the road towards next generation research infrastructures
+
+Words:
+Bartosz Belter, PSNC
+Poznańskie Centrum Superkomputerowo-Sieciowe
+(PCSS) is leading the development of a new generation of research infrastructures within high-level projects in collaboration with both national and international partners. Four of these projects will be presented at this year’s TNC Conference which will rely heavily on the network infrastructure of Polish NREN PIONIER.
+The
+PLAI4SCIENCE project
+addresses an environmental need for an integrated computing platform to support the use of artificial intelligence (AI) and machine learning (ML) in the sciences. The infrastructure is intended to support research and the creation of innovative solutions with applications in industry, medicine, energy and other sectors. The main objective of the PLAI4SCIENCE infrastructure is to create a computing platform and test beds for the scientific community and business entities, providing them with tools for ML-assisted material simulations, molecular spectroscopy and photonic metrology and spatial-spectral imaging supported by ML models. The use of explainable AI and ML methods in sciences involves specialised algorithms and models, both classical and deep neural network architectures, and an advanced computing environment with high-powered clusters and appropriate software.
+Project
+ŚWIATOWID
+aims to create the research infrastructure enabling analysis of the full spectrum radio signals with the emphasis on the GNSS and ADS/B bands. The infrastructure will consists of the network of detector nodes located in the North-Eastern part of Poland capable of scanning radio spectrum within the defined bands, initial processing at the edge, and transfer the data of signals for storage and further analysis via PIONIER network. Another infrastructure component in the project will be the hybrid mass storage system located at PCSS in Poznan for storing the data, coupled with the necessary policies and service layer for access by various entities.
+Finally, the development of necessary algorithms and machine learning models will enable the recognition of evolving phenomena, both natural and artificial. These models will be developed and
+and later uploaded to the edge for initial pattern recognition and pre-processing of the data stream.
+Implementation and research will lead to increased knowledge in signal detection and processing together with the extensive historical data of a sensitive band of the radio spectrum that could be used for further research and retrospective identification of phenomena by research institutions as well as other actors including commercial entities, e.g., planning to deploy new wireless infrastructures.
+Q-ChronoS
+project develops a system of mobile quantum sensors based on optical atomic clocks, as well as the infrastructure for optical frequency transfer, enabling their use in various locations across Poland. The project targets a wide audience involved in quantum technologies, geodesy, metrology, physics, radio astronomy, and communication. The created infrastructure will enable research and development in areas such as relativistic geodesy, studies of gravitational potential changes, seismic motion detection, direct oceanographic sea level measurement and ocean dynamics, radio astronomical research, time standardization and metrology, as well as fundamental research. This includes verification of the invariance of physical constants, coupling to fields of the standard model of ultra-light scalar dark matter fields, dark energy models, general scalar fields with hidden sectors, theories of new Kaluza-Klein physics, dilaton or soliton models, verification of Lorentz invariance, and as tests of quantum gravity, special relativity, gravitational wave detection, and the search for cosmological topological defects.
+WEDROWNIQ
+project will focus on satellite optical quantum communication to provide secure links and a platform for development of distributed quantum computing and sensing systems such as optical clocks, quantum gravimeters. The infrastructure will also enable the simultaneous development of classic satellite optical communication schemes for fast data exchange with low latency and advanced methods of satellite tracking. The potential of quantum communication ground stations and the accompanying infrastructure enables the development of new solutions in the field of secure communication systems, general quantum communication and quantum communication for distributed quantum computing.
+All the above-mentioned projects are co-financed by the European Union through the European Funds for Smart Economy Programme (FENG).
+An important element of the presentation at the PCSS and PIONIER booth during the TNC will also be the
+latest investments in the PIAST-AI project as part of the European network of AI Factories
+and the
+installation of a quantum computer as part of the EuroHPC JU initiative
+.
+We invite you to visit booth #2 at the TNC25 Conference in Brighton to learn more about the above-mentioned projects.
+Read more at:
+www.psnc.pl/tnc25
+This article is featured on CONNECT49, the latest issue of the GÉANT CONNECT Magazine!
+Read the full online magazine here
+Tags
+PCSS

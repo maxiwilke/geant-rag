@@ -1,0 +1,27 @@
+URL: https://connect.geant.org/2025/06/10/the-challenges-and-solutions-to-connecting-brazil
+TITLE: The challenges and solutions to connecting Brazil
+
+At Barão de Rio Branco State School in Amapá, in northern Brazil, headteacher Maria de Nazaré Barbosa faced a paradox: although the institution, founded in 1944 as the first brick-built school in the state, had a solid physical structure, its internet connection was extremely poor. “Teachers couldn’t open basic files or browse the web properly. It made the learning process much harder,” she explains.
+This reality began to shift thanks to the growth of public policies aimed at Brazilians who had long been excluded from the digital world — especially in regions far from major urban centres. Key initiatives included the installation of subfluvial fibre-optic cables beneath the Amazon River — the world’s longest — the provision of Wi-Fi connectivity for pedagogical use in schools, and the free distribution of mobile broadband SIM cards to thousands of students.
+“These programmes are designed to be integrated, and together they expand the reach of internet access across Brazil,” explains Gorgonio Araújo, Deputy Director of Stakeholder Engagement at RNP. In the case of Barão de Rio Branco, the combination of public policies implemented by RNP ensured Wi-Fi connectivity of over 100 Gb/s for students, teachers, and staff.
+Digital infrastructure as a national challenge
+According to the Continuous National Household Sample Survey – Information and Communication Technology (Pnad TIC 2023), by the Brazilian Institute of Geography and Statistics (IBGE), 92.5% of Brazilian households have internet access. However, nearly 6 million families remain offline.
+Despite progress, only 22% of people aged 10 and over have adequate connectivity, according to the Conectividade Significativa (2023) survey by the Brazilian Network Information Center (NIC.br). Rates are even lower among black and mixed-race populations, lower-income households and residents of the North and Northeast regions.
+“In the past, we did what we could with the poor connection. We never stopped delivering knowledge to our students. But there’s no doubt that with a high-quality connection, we are much happier with our work,” says Maria de Nazaré.
+The Brazilian headteacher Maria de Nazaré Barbosa discusses the connectivity challenges faced by her school. RNP collection
+Conecta Programme: transforming access into opportunity
+As its name suggests, the Conecta programme aims to connect towns and cities located far from major capitals to a secure, high-performance national network for communication, data storage and processing. This infrastructure is crucial for the advancement of research that requires intensive data processing, and will be available to scientists and students across all regions of Brazil.
+Conecta works as a coordinated platform for various public policy initiatives, accelerating integration and amplifying impact for society. The programme operates across five strategic pillars, all set to be operational by the end of 2026:
+Expansion and capacity enhancement of RNP’s network;
+Deployment of 19 state-level backbone infoways, providing providing capillarity to the above network;;
+Expansion of the e-Science network for big science research centres;
+Establishment of three National Data Centres (CNDs);
+Creation of six security operations and intelligence centres (SOCs).
+In total, the initiative will benefit over 1,700 institutions from Brazil’s education and research sectors, 180,000 researchers, 3,880 postgraduate programmes, and 16 innovation hubs and science parks.
+This article is featured on CONNECT49, the latest issue of the GÉANT CONNECT Magazine!
+Read the full online magazine here
+Tags
+Brazil
+CONNECT49
+connectivity
+RNP

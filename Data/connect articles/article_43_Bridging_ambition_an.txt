@@ -1,0 +1,48 @@
+URL: https://connect.geant.org/2025/06/10/bridging-ambition-and-research-impact-how-softwareone-and-google-cloud-empower-innovation
+TITLE: Bridging ambition and research impact: how SoftwareOne and Google Cloud empower innovation
+
+Words:
+Joe Morley, SoftwareOne
+and
+Hariprasad Radhakrishnan, Google Cloud
+The
+OCRE framework
+helps universities and research institutions across Europe adopt cloud services quickly, securely, and at scale. As the largest provider of Google Cloud services under OCRE, SoftwareOne supports institutions in over 35 countries, helping translate research goals into tangible outcomes.
+Today, researchers face an urgent need for smarter, faster tools. Datasets are expanding, timelines are shrinking, and the demand for cross-institutional collaboration is growing. Institutions need solutions that not only keep up but accelerate their work.
+Google Cloud AI: Designed for Research Excellence
+With decades of experience leading scientific discovery, Google has developed an AI and data services portfolio specifically tuned for research environments. Institutions can tap into:
+Gemini and Gemini 2.0 Pro:
+Advanced multimodal AI models for summarising research, generating hypotheses, and translating complex academic concepts into action.
+NotebookLM:
+An AI-powered assistant to streamline literature reviews and source-based summarisation.
+Vertex AI:
+A flexible ML platform that allows researchers to train, fine-tune, and deploy models at scale using familiar tools.
+Google Cloud’s AI Hypercomputer:
+High-performance infrastructure that accelerates training times for compute-heavy projects.
+DeepMind APIs:
+Access to breakthrough models such as AlphaFold for scientific research.
+AI Studio:
+A low-code space to rapidly prototype and experiment with AI-driven ideas.
+AI Co-Scientist:
+A new multi-agent system powered by Gemini 2.0, acting as a virtual research partner to help scientists develop and test new hypotheses more efficiently.
+These solutions are not just theoretical. They are already helping teams streamline literature reviews, design smarter experiments, and push the boundaries of what’s possible in fields like life sciences, climate modelling, and materials science.
+Turning AI Ambition into Action
+While the potential is vast, many institutions still struggle with where to start. Limited internal expertise, fragmented data, unclear strategies, and governance hurdles often stall promising AI initiatives before they reach impact.
+This is where SoftwareOne comes in. Our team bridges ambition and execution by simplifying the AI landscape and aligning technologies with institutional goals. We guide universities and research teams through every phase: from first proofs of concept to building responsible AI frameworks and aligning projects with funding and governance models.
+Through the OCRE framework, SoftwareOne helps institutions:
+Access discounted Google Cloud and AI solutions
+Simplify procurement through ready-to-use contracts
+Accelerate AI adoption for research, teaching, and data initiatives
+Ensure cloud deployments are compliant, efficient, and aligned with funding strategies
+As a Premier Partner for Google Cloud, SoftwareOne brings deep expertise across AI, analytics, modern infrastructure, and collaboration tools like Google Workspace, ensuring that institutions are supported every step of the way.
+The future of research is faster, smarter, and more collaborative. Let’s build it together.
+Join Us at TNC25
+If you are attending TNC25, visit SoftwareOne at our booth to see firsthand how we are helping research institutions drive innovation with Google Cloud. Don’t miss our speaking session, where we will showcase real-world examples of AI transforming academic research.
+To learn more about SoftwareOne’s services under the OCRE framework, visit
+softwareone.com/ocre-2024
+.
+This article is featured on CONNECT49, the latest issue of the GÉANT CONNECT Magazine!
+Read the full online magazine here
+Tags
+Google Cloud
+SoftwareOne
