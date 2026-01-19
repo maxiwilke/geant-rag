@@ -8,8 +8,7 @@ from langchain_core.messages import HumanMessage, AIMessage
 from rag_module import create_rag_chain, MAX_HISTORY_MESSAGES
 
 # Correct Ollama imports
-from langchain_ollama import ChatOllama, OllamaEmbeddings
-
+from langchain_ollama import ChatOllama
 
 if __name__ == "__main__":
     rebuild = "--rebuild" in sys.argv
@@ -22,9 +21,13 @@ if __name__ == "__main__":
         temperature=0.7
     )
 
-    # Local Ollama embeddings
-    embeddings = OllamaEmbeddings(
-        model="mxbai-embed-large:latest"
+    # HuggingFace embeddings (384 dimensions)
+    from langchain_huggingface import HuggingFaceEmbeddings
+
+    embeddings = HuggingFaceEmbeddings(
+        model_name="sentence-transformers/all-MiniLM-L6-v2",
+        model_kwargs={'device': 'cpu'},
+        encode_kwargs={'normalize_embeddings': True}
     )
 
     # Pass both LLM + embeddings into RAG
