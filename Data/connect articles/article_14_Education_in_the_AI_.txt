@@ -1,0 +1,18 @@
+URL: https://connect.geant.org/2025/06/10/education-in-the-ai-era
+TITLE: Education in the AI era
+
+Words: Kate Maxwell, Microsoft
+Higher education is at a turning point. In a rapidly evolving digital landscape, institutions are being asked to deliver more personalized learning, accelerate discovery, advance research, and operate with greater agility—often with fewer resources. In this environment, artificial intelligence and cloud technologies are emerging as critical tools for transformation.
+According to IDC’s 2024
+AI opportunity study
+, 86% of education organizations are now using generative AI to empower students, faculty, and staff – nearly doubling from the year before. And for every dollar invested in generative AI, institutions are seeing an average return of $3.2x within just over a year. This financial impact underscores the role of AI in advancing institutional business models, in addition to teaching, learning, and innovation. AI is no longer an emerging trend but a fundamental enabler of new possibilities in higher education. Cloud capabilities enable greater innovation, security, resilience, and cost effective infrastructure to support AI-powered advancements. Together, AI and cloud computing are reshaping education—driving innovation while keeping the human at the center of learning.
+We are pleased to share a new playbook to assist Higher Education leaders with their cloud & AI adoption journeys. This playbook provides a practical approach to adopting AI in a way that aligns with institutional goals. It draws on Microsoft’s Cloud Adoption Framework to guide education leaders through strategy development, responsible implementation, and long-term value creation.
+We recognize the challenges that come with adoption—whether it’s upskilling staff, addressing data security, or establishing responsible AI governance. Our goal is to help institutions accelerate AI outcomes through informed, strategic conversations that put trust, responsibility, and the human experience at the center.
+Download the
+AI playbook
+The Microsoft Education team looks forward to seeing everyone at TNC25!
+Join us for a session on “Education in the AI Era,” at Brighton Dome, Exchange Theatre, on Tuesday at 15:30 – 16:00 BST where you will also have the opportunity to hear from two of our Customers (Nottingham University & Manchester Metropolitan University) on “Enabling and Accelerating Research in the Cloud”.
+This article is featured on CONNECT49, the latest issue of the GÉANT CONNECT Magazine!
+Read the full online magazine here
+Tags
+Microsoft

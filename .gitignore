@@ -3,7 +3,6 @@ __pycache__/
 *.pyc
 .qdrant/
 qdrant_storage/
-data/
 .DS_Store
 .env
 

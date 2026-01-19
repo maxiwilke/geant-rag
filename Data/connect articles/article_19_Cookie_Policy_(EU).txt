@@ -1,0 +1,677 @@
+URL: https://connect.geant.org/cookie-policy-eu
+TITLE: Cookie Policy (EU)
+
+This Cookie Policy was last updated on 28th November 2025 and applies to citizens and legal permanent residents of the European Economic Area and Switzerland.
+1. Introduction
+Our website,
+https://connect.geant.org
+(hereinafter: "the website") uses cookies and other related technologies (for convenience all technologies are referred to as "cookies"). Cookies are also placed by third parties we have engaged. In the document below we inform you about the use of cookies on our website.
+2. What are cookies?
+A cookie is a small simple file that is sent along with pages of this website and stored by your browser on the hard drive of your computer or another device. The information stored therein may be returned to our servers or to the servers of the relevant third parties during a subsequent visit.
+3. What are scripts?
+A script is a piece of program code that is used to make our website function properly and interactively. This code is executed on our server or on your device.
+4. What is a web beacon?
+A web beacon (or a pixel tag) is a small, invisible piece of text or image on a website that is used to monitor traffic on a website. In order to do this, various data about you is stored using web beacons.
+5. Cookies
+5.1 Technical or functional cookies
+Some cookies ensure that certain parts of the website work properly and that your user preferences remain known. By placing functional cookies, we make it easier for you to visit our website. This way, you do not need to repeatedly enter the same information when visiting our website and, for example, the items remain in your shopping cart until you have paid. We may place these cookies without your consent.
+5.2 Statistics cookies
+We use statistics cookies to optimise the website experience for our users. With these statistics cookies we get insights in the usage of our website. We ask your permission to place statistics cookies.
+5.3 Marketing/Tracking cookies
+Marketing/Tracking cookies are cookies or any other form of local storage, used to create user profiles to display advertising or to track the user on this website or across several websites for similar marketing purposes.
+5.4 Social media
+On our website, we have included content from Instagram to promote web pages (e.g. “like”, “pin”) or share (e.g. “tweet”) on social networks like Instagram. This content is embedded with code derived from Instagram and places cookies. This content might store and process certain information for personalised advertising.
+Please read the privacy statement of these social networks (which can change regularly) to read what they do with your (personal) data which they process using these cookies. The data that is retrieved is anonymised as much as possible. Instagram is located in the United States.
+6. Placed cookies
+Google reCAPTCHA
+Functional, Marketing
+Consent to service google-recaptcha
+Usage
+We use Google reCAPTCHA for spam prevention.
+Read more about Google reCAPTCHA
+Sharing data
+For more information, please read the
+Google reCAPTCHA Privacy Statement
+.
+Functional
+Name
+_grecaptcha
+Expiration
+6 months
+Function
+Provide spam protection
+Marketing
+Name
+rc::c
+Expiration
+session
+Function
+Read and filter requests from bots
+Name
+rc::b
+Expiration
+session
+Function
+Read and filter requests from bots
+Name
+rc::a
+Expiration
+persistent
+Function
+Read and filter requests from bots
+WordPress
+Functional
+Consent to service wordpress
+Usage
+We use WordPress for website development.
+Read more about WordPress
+Sharing data
+This data is not shared with third parties.
+Functional
+Name
+wpEmojiSettingsSupports
+Expiration
+session
+Function
+Store browser details
+Name
+wp-settings-time-*
+Expiration
+1 year
+Function
+Store user preferences
+Name
+wordpress_logged_in_*
+Expiration
+persistent
+Function
+Store logged in users
+Name
+wp-settings-*
+Expiration
+persistent
+Function
+Store user preferences
+Name
+wordpress_test_cookie
+Expiration
+session
+Function
+Read if cookies can be placed
+Name
+wp_lang
+Expiration
+session
+Function
+Store language settings
+Google Analytics
+Statistics
+Consent to service google-analytics
+Usage
+We use Google Analytics for website statistics.
+Read more about Google Analytics
+Sharing data
+For more information, please read the
+Google Analytics Privacy Statement
+.
+Statistics
+Name
+_gid
+Expiration
+1 day
+Function
+Store and count pageviews
+Name
+_ga_*
+Expiration
+1 year
+Function
+Store and count pageviews
+Name
+_gat
+Expiration
+1 minute
+Function
+Read and filter requests from bots
+Name
+_gat_gtag_UA_*
+Expiration
+1 minute
+Function
+Store a unique user ID
+Name
+_ga
+Expiration
+2 years
+Function
+Store and count pageviews
+Google Fonts
+Marketing
+Consent to service google-fonts
+Usage
+We use Google Fonts for display of webfonts.
+Read more about Google Fonts
+Sharing data
+For more information, please read the
+Google Fonts Privacy Statement
+.
+Marketing
+Name
+Google Fonts API
+Expiration
+expires immediately
+Function
+Read user IP address
+Google Maps
+Marketing
+Consent to service google-maps
+Usage
+We use Google Maps for maps display.
+Read more about Google Maps
+Sharing data
+For more information, please read the
+Google Maps Privacy Statement
+.
+Marketing
+Name
+Google Maps API
+Expiration
+expires immediately
+Function
+Read user IP address
+YouTube
+Marketing
+Consent to service youtube
+Usage
+We use YouTube for video display.
+Read more about YouTube
+Sharing data
+For more information, please read the
+YouTube Privacy Statement
+.
+Marketing
+Name
+GPS
+Expiration
+session
+Function
+Store location data
+Name
+VISITOR_INFO1_LIVE
+Expiration
+6 months
+Function
+Provide ad delivery or retargeting
+Name
+YSC
+Expiration
+session
+Function
+Store and track interaction
+Name
+PREF
+Expiration
+8 months
+Function
+Store user preferences
+ShareThis
+Marketing, Preferences
+Consent to service sharethis
+Usage
+We use ShareThis for display of recent social posts and/or social share buttons.
+Read more about ShareThis
+Sharing data
+For more information, please read the
+ShareThis Privacy Statement
+.
+Purpose pending investigation
+Name
+UIDR
+Expiration
+Function
+Name
+__uset
+Expiration
+Function
+Name
+uset
+Expiration
+Function
+Marketing
+Name
+_stgmap
+Expiration
+1 week
+Function
+Store and track audience reach
+Name
+_stamap
+Expiration
+1 week
+Function
+Store and track audience reach
+Name
+stacxiommap
+Expiration
+1 week
+Function
+Store and track audience reach
+Name
+stdlxmap
+Expiration
+1 week
+Function
+Store and track audience reach
+Name
+__stid
+Expiration
+1 week
+Function
+Store and track audience reach
+Preferences
+Name
+fpestid
+Expiration
+13 months
+Function
+WP Engine
+Purpose pending investigation
+Consent to service wp-engine
+Usage
+We use WP Engine for website hosting.
+Read more about WP Engine
+Sharing data
+For more information, please read the
+WP Engine Privacy Statement
+.
+Purpose pending investigation
+Name
+rtk_gdpr_c
+Expiration
+session
+Function
+Name
+rtkuuid
+Expiration
+session
+Function
+Name
+rtk_gdpr_a
+Expiration
+session
+Function
+Name
+rtk_p
+Expiration
+session
+Function
+Name
+rtk_sid
+Expiration
+session
+Function
+Name
+rtk_rps
+Expiration
+session
+Function
+Name
+rtk_sat
+Expiration
+session
+Function
+GDPR Cookie Consent
+Functional
+Consent to service gdpr-cookie-consent
+Usage
+We use GDPR Cookie Consent for cookie consent management.
+Read more about GDPR Cookie Consent
+Sharing data
+This data is not shared with third parties.
+Functional
+Name
+viewed_cookie_policy
+Expiration
+persistent
+Function
+Store if a message has been shown
+Complianz
+Functional
+Consent to service complianz
+Usage
+We use Complianz for cookie consent management.
+Read more about Complianz
+Sharing data
+This data is not shared with third parties. For more information, please read the
+Complianz Privacy Statement
+.
+Functional
+Name
+cmplz_policy_id
+Expiration
+365 days
+Function
+Store accepted cookie policy ID
+Name
+cmplz_consented_services
+Expiration
+365 days
+Function
+Store cookie consent preferences
+Name
+cmplz_marketing
+Expiration
+365 days
+Function
+Store cookie consent preferences
+Name
+cmplz_statistics
+Expiration
+365 days
+Function
+Store cookie consent preferences
+Name
+cmplz_preferences
+Expiration
+365 days
+Function
+Store cookie consent preferences
+Name
+cmplz_functional
+Expiration
+365 days
+Function
+Store cookie consent preferences
+Name
+cmplz_banner-status
+Expiration
+365 days
+Function
+Store if the cookie banner has been dismissed
+Clicky
+Statistics
+Consent to service clicky
+Usage
+We use Clicky for website statistics.
+Read more about Clicky
+Sharing data
+For more information, please read the
+Clicky Privacy Statement
+.
+Statistics
+Name
+_jsuid
+Expiration
+session
+Function
+Store first visit to the site
+Hotjar
+Statistics, Functional
+Consent to service hotjar
+Usage
+We use Hotjar for heat maps and screen recordings.
+Read more about Hotjar
+Sharing data
+For more information, please read the
+Hotjar Privacy Statement
+.
+Statistics
+Name
+_hjSessionUser_*
+Expiration
+1 year
+Function
+Store a unique user ID
+Functional
+Name
+_hjSession_*
+Expiration
+session
+Function
+Provide functions across pages
+Tidio Live Chat
+Functional
+Consent to service tidio-live-chat
+Usage
+We use Tidio Live Chat for chat support.
+Read more about Tidio Live Chat
+Sharing data
+For more information, please read the
+Tidio Live Chat Privacy Statement
+.
+Functional
+Name
+tidio_state_*
+Expiration
+Function
+CloudFlare
+Functional
+Consent to service cloudflare
+Usage
+We use CloudFlare for content distribution network (CDN) services.
+Read more about CloudFlare
+Sharing data
+For more information, please read the
+CloudFlare Privacy Statement
+.
+Functional
+Name
+__cf_bm
+Expiration
+30 minutes
+Function
+Read and filter requests from bots
+Miscellaneous
+Purpose pending investigation
+Consent to service miscellaneous
+Usage
+Sharing data
+Sharing of data is pending investigation
+Purpose pending investigation
+Name
+_saml_idp
+Expiration
+Function
+Name
+cookielawinfo-checkbox-*
+Expiration
+Function
+Name
+ssi--sessionId
+Expiration
+Function
+Name
+ssi--lastInteraction
+Expiration
+Function
+Name
+cawp_wg_default_interval
+Expiration
+Function
+Name
+cawp_wg_default_swmetric
+Expiration
+Function
+Name
+cawp_wg_default_metric
+Expiration
+Function
+Name
+cawp_wg_default_dimension
+Expiration
+Function
+Name
+unibox_search_history
+Expiration
+Function
+Name
+ss360_last_query_result
+Expiration
+Function
+Name
+wp-settings-5
+Expiration
+Function
+Name
+ss360CGResults
+Expiration
+Function
+Name
+ss360-cg--c
+Expiration
+Function
+Name
+ss360-offset--c
+Expiration
+Function
+Name
+ss360-query--c
+Expiration
+Function
+Name
+wp-settings-8
+Expiration
+Function
+Name
+redux_current_tab
+Expiration
+Function
+Name
+redux_current_tab_get
+Expiration
+Function
+Name
+wp-autosave-1
+Expiration
+Function
+Name
+_lfa
+Expiration
+Function
+Name
+__ssid
+Expiration
+Function
+Name
+qcld_clr_Notice_time_set
+Expiration
+Function
+Name
+qcld_clr_Notice_set
+Expiration
+Function
+Name
+301-activeTab
+Expiration
+Function
+Name
+wp-settings-13
+Expiration
+Function
+Name
+citrix_ns_id_*
+Expiration
+Function
+Name
+klarna_amazon_modal_closed
+Expiration
+Function
+Name
+sessionId
+Expiration
+Function
+Name
+AMP_MKTG_36c1f684d7
+Expiration
+Function
+Name
+AMP_36c1f684d7
+Expiration
+Function
+Name
+ssPanelTop
+Expiration
+Function
+Name
+clipboardSection
+Expiration
+Function
+Name
+n2-colors
+Expiration
+Function
+Name
+wp-settings-7
+Expiration
+Function
+Name
+ppma_settings_active_tab
+Expiration
+Function
+Name
+adobeCleanFontAdded
+Expiration
+Function
+Name
+aiovg_rand_seed
+Expiration
+Function
+Name
+wp-postpass_*
+Expiration
+Function
+Name
+ea11y_introduction_notice
+Expiration
+Function
+Name
+mo_*
+Expiration
+Function
+Name
+redirect_displayType
+Expiration
+Function
+Name
+__Secure-ROLLOUT_TOKEN
+Expiration
+Function
+Name
+__Secure-YEC
+Expiration
+Function
+Name
+VISITOR_PRIVACY_METADATA
+Expiration
+Function
+7. Consent
+When you visit our website for the first time, we will show you a pop-up with an explanation about cookies. As soon as you click on "Save preferences", you consent to us using the categories of cookies and plug-ins you selected in the pop-up, as described in this Cookie Policy. You can disable the use of cookies via your browser, but please note that our website may no longer work properly.
+7.1 Manage your consent settings
+You have loaded the Cookie Policy without javascript support. On AMP, you can use the manage consent button on the bottom of the page.
+8. Enabling/disabling and deleting cookies
+You can use your internet browser to automatically or manually delete cookies. You can also specify that certain cookies may not be placed. Another option is to change the settings of your internet browser so that you receive a message each time a cookie is placed. For more information about these options, please refer to the instructions in the Help section of your browser.
+Please note that our website may not work properly if all cookies are disabled. If you do delete the cookies in your browser, they will be placed again after your consent when you visit our website again.
+9. Your rights with respect to personal data
+You have the following rights with respect to your personal data:
+You have the right to know why your personal data is needed, what will happen to it, and how long it will be retained for.
+Right of access: You have the right to access your personal data that is known to us.
+Right to rectification: you have the right to supplement, correct, have deleted or blocked your personal data whenever you wish.
+If you give us your consent to process your data, you have the right to revoke that consent and to have your personal data deleted.
+Right to transfer your data: you have the right to request all your personal data from the controller and transfer it in its entirety to another controller.
+Right to object: you may object to the processing of your data. We comply with this, unless there are justified grounds for processing.
+To exercise these rights, please contact us. Please refer to the contact details at the bottom of this Cookie Policy. If you have a complaint about how we handle your data, we would like to hear from you, but you also have the right to submit a complaint to the supervisory authority (the Data Protection Authority).
+10. Contact details
+For questions and/or comments about our Cookie Policy and this statement, please contact us by using the following contact details:
+GÉANT
+Nieuw Amsterdam, Level 6, Hoekenrode 3, 1102 BR
+Netherlands
+Website:
+https://connect.geant.org
+Email:
+gdpr@
+ex.com
+geant.org
+Phone number: 020 530 4488
+This Cookie Policy was synchronised with
+cookiedatabase.org
+on 28th November 2025.

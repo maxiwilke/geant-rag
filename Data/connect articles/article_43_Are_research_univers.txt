@@ -1,0 +1,36 @@
+URL: https://connect.geant.org/2025/06/10/are-research-universities-ready-for-the-data-demands-of-a-new-generation-of-students-staff-and-scientists
+TITLE: Are research universities ready for the data demands of a new generation of students, staff and scientists?
+
+Words by: Nokia
+Universities face two key problems when it comes to networking: intensifying demand for IT and data center services and an IT staffing crisis. To keep pace with the requirements of their users, universities need solutions that will modernize their IT and data center networks while preventing their IT teams from making costly mistakes.
+Universities are turning to network automation to address this two-pronged challenge. They know that automation can speed up processes and reduce human errors. But there’s a downside: Automation can also magnify errors and cause outages that leave users disconnected.
+Like enterprises, research universities typically have small IT teams with
+big responsibilities and stress
+. Many campus IT networking engineers are now approaching retirement age. This is a common problem across higher education, where
+three in ten workers are over 55
+. Students often provide valuable IT support to these engineers, but once the engineers retire, universities will need to deal with a knowledge gap and an increasing risk of errors.
+This staffing challenge comes at an inopportune time. Traffic on university networks is growing as users embrace data-intensive digital applications, analysis and tools. For example:
+Students need university networks to deliver services such as broadband internet access, email, virtual learning, streaming and gaming.
+Staff and administrators need networks that support the digitalization of human resources, enrollment, student support, fundraising and alumni services.
+Research scientists need networks that enable massive data exchanges for applications such as IoT data analysis, high-performance computing (HPC) and artificial intelligence (AI) training and modeling.
+How fast is data traffic increasing? Respondents to the
+2023 GÉANT Compendium
+survey of European National Research and Education Networks (NRENs) expect 77% traffic growth from the universities they serve between 2024 and 2026. One NREN expects to see 400% growth in university traffic.
+Given the increasing reliance on digitalized data among their stakeholders, it’s easy to understand why universities must keep their networks up, running and performing at their best. It’s also easy to see how human error could undermine their efforts.
+A
+2023 report by the Uptime Institute
+found that human error plays a role in two-thirds to four-fifths of IT and data center outages. It also revealed that 39% of organizations had experienced a major outage induced by human error during the past three years. The main causes were data center staff failing to follow procedures (47%) and incorrect staff processes or procedures (40%).
+Network automation will help universities address their IT and data center challenges. But they can’t simply turn on automation and make the problems go away. That’s a way to break things quickly and at scale. And, given the complexity and fragility of most networks, implementing automation can be effort-intensive.
+To make automation pay off and ensure that students, staff, administrators and researchers have truly reliable, high-quality IT and data center services, universities need an easy way to eliminate human error.
+Nokia addresses this need with a network automation approach built around a simple concept: reducing human error to zero. This approach combines
+high-performance, highly available data center hardware and software with an automation platform designed to eradicate mistakes. It provides the ingredients universities need to build reliable IT and data center network architectures, deliver reliable quality and ensure reliable operations.
+The key enabler for the human error to zero concept is the Nokia Event-Driven Automation (EDA) platform. This platform brings a modern, intent-based approach to network automation, building on Kubernetes to bring highly reliable, simplified and adaptable lifecycle management to IT and data center networks.
+EDA features digital twin capabilities, generative AI assistance and integration with a wide range of IT service management systems, event notification systems and cloud management platforms. With a focus on driving human error to zero in network operations, EDA reduces outages and application downtime while cutting operational effort up to 40%. This will help universities adapt to new demands for digitalized data with smaller and potentially less experienced IT teams.
+Find Out More
+Ready to achieve human error zero in your university IT and data center networks? Visit the
+Event-Driven Automation platform
+web page and discover a better way to ensure that your networks always work as expected.
+This article is featured on CONNECT49, the latest issue of the GÉANT CONNECT Magazine!
+Read the full online magazine here
+Tags
+NOKIA
