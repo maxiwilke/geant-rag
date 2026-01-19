@@ -1,0 +1,94 @@
+URL: https://connect.geant.org/news-submissions
+TITLE: Community News submissions page
+
+Welcome to the home of the CONNECT Community News.
+CONNECT is a trusted source of information for international research and education networking news. To maintain this quality, please follow these essential guidelines.
+News Submissions
+Image Requirements:
+Images must be
+at least 1000 pixels wide
+and relevant to the article.
+Project or company logos must be added manually.
+Relevance: Only upload news that you think will be relevant / of interest to an international audience.
+Newsletter Mentions: Highlight just 1–2 global stories, not the entire edition.
+Headline: Keep it
+8–10 words maximum
+, in English.
+Abstract: Max 150 words. Do not paste the full article.
+URL: Must link to a public, non-password-protected full article.
+Language Note: All news headlines and teaser texts must be in English.  If the article is in another language, add: “More in [language]” at the end.
+Author: The “Your Name” field should name
+the original author
+.
+Image Use – Copyright & GDPR
+Use only
+images you have full rights to:
+Licensed stock or Creative Commons (check permissions),
+Internally created or rights-confirmed visuals.
+Do not use
+:
+Images found online,
+AI-generated content without clear rights or licences.
+Attribution
+: Required if the licence (e.g. CC BY) mandates it.
+AI Images
+: Allowed only with full rights and no infringement of third-party likeness or style.
+People in Photos
+:
+If clearly identifiable, obtain informed consent unless an exception applies (e.g. public event).
+Avoid or anonymize (e.g. blur faces) when in doubt.
+*Please note: if you are logged into the website then the “Your Name” field is pre-populated and hidden. If you wish to post an article on behalf of another author then please log out of the site before submitting a post to CONNECT.
+Log in here
+Privacy Notice for Contributors
+–
+CONNECT Magazin
+e/Blog
+This privacy notice explains how your personal data will be collected and processed when you submit content (articles, images, etc.) to CONNECT Magazine & website (news from the GÉANT community: a
+magazine
+, a website and a weekly newsletter), publications of the GÉANT Association.
+Who is the Data Controller?
+The data controller is:
+GÉANT Association
+(Hoekenrode 3, 1102 BR Amsterdam, The Netherlands). Controller has appointed DPO who can be contacted via email:
+gdpr@geant.org
+Purpose of Data Collection
+When you submit an article and/or image for publication in CONNECT Magazine/Blog, we collect and process personal data for the following purposes:
+To review, edit, and publish your article
+To credit you as the author
+To contact you regarding your submission
+To promote CONNECT Magazine/Blog or website through GÉANT’s digital channels (e.g. website, social media, newsletters)
+What Personal Data Is Collected?
+We may collect and process:
+Your full name and professional affiliation
+Email address and contact details
+Biography or author description (if provided)
+Submitted images and their metadata
+Any other personal data you include in your article
+How Is Your Data Used and Shared?
+Your article, name, and related images may be published in both print and digital editions of CONNECT Magazine/Blog and/or connect.geant.org).
+Content may be republished or shared via GÉANT’s website (connect.geant.org), social media, and other communication channels.
+Your personal data is processed only by authorised GÉANT staff and third-party service providers (e.g. printing or design services), solely for the purposes above.
+Data Retention
+Your submission and related personal data may be retained for archival, editorial, or legal purposes
+Your Rights Under GDPR
+As an individual, you have the right to: access your personal data, request correction or deletion, object to or restrict processing, lodge a complaint with a supervisory authority. To exercise your rights, contact:
+gdpr@geant.org
+To upload your news please complete the form below:
+Please complete the required fields.
+Your Name
+Your Email
+Your URL
+Post Title
+Your Name
+1 + 1 =
+Post Category
+Please select a category..
+Community News
+Events
+In Focus
+In the field stories
+Post Content
+Upload an Image
+Please upload at least one image to complement the article
+Human verification: leave this field empty.
+By submitting an image to CONNECT Magazine or its website, you confirm you own the rights or have permission to share it and have obtained consent from identifiable individuals, and you grant GÉANT a non-exclusive, royalty-free, worldwide license to use it across print, digital, social media, and other materials.

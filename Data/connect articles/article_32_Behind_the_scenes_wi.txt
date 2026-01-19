@@ -1,0 +1,41 @@
+URL: https://connect.geant.org/2025/06/10/behind-the-scenes-with-geant-digital-services-people-platforms-and-purpose
+TITLE: Behind the scenes with GÉANT Digital Services: people, platforms and purpose
+
+What role does the Digital Services (DS) department at GÉANT really play? The answer: more than you might think, even if most of it happens behind the scenes. To shed light on this vital yet often invisible part of the GÉANT organisation, we spoke with Mandeep Saini, Head of Digital Services, about the department’s role in supporting GÉANT, strengthening security, and maintaining the digital infrastructure that powers the R&E community. From enabling collaboration to laying the groundwork for innovation, Digital Services helps others thrive. In this conversation, Mandeep shares her thoughts on priorities, impact, and why people are just as important as technology in any digital transformation.
+Your teams work in areas that are critical, yet often invisible. How would you explain the impact of your department to the R&E community?
+At GÉANT, the Digital Services team forms the digital backbone that keeps the organisation connected, operational, and future-ready. From hardware and hosting to collaboration platforms and custom tools, we provide the essential infrastructure that enables staff, project teams, and the wider R&E community to thrive. Our impact may be behind the scenes, but it’s significant. From ensuing availability during core hours and safeguarding digital assets to streamlining operations and enhancing user experience, our work helps build a resilient, open, and high-performing digital infrastructure that supports both European values and global competitiveness. Often described as “foundational,” our services underpin the success of other teams and projects across the organisation.
+Each team within Digital Services plays a strategic role:
+•
+Platform Engineering
+delivers robust, scalable infrastructure and DevOps capabilities, using automation and infrastructureas- code to support rapid, reliable development and deployment.
+•
+DS
+Security
+protects systems and data through proactive monitoring, vulnerability management, incident response, and policy compliance ensuring security is embedded at every level.
+•
+DS Operations
+manages enduser support, devices, and collaboration platforms like SharePoint and WordPress. Their work ensures productive, secure work for all staff and promotes inclusive access to tools and information across the organisation and community.
+•
+Software Engineering
+creates custom web applications and internal tools tailored to GÉANT’s needs. For example, the Dashboard app empowers the Network Operations Centre to monitor and respond to network issues in real time.
+Ultimately, Digital Services contributes to a future in which GÉANT continues to be a trusted and forward-looking partner – secure by design, inclusive by nature, and competitive by capability.
+“We’re not just maintaining systems, we’re enabling a Europe that’s secure, open, and ready to lead in digital transformation.”
+What are the core priorities for Digital Services right now?
+Right now, we’re focused on delivering secure, scalable platforms while creating a more responsive, usercentric experience—both internally and externally.
+Our top priorities include:
+• Enhancing the user experience across all services.
+• Strengthening infrastructure security and embedding DevSecOps practices.
+• Streamlining operations through automation and self-service tools.
+• Ensuring compliance and governance, especially around access, data handling, and audits.
+These priorities reflect a broader transformation focused on elevating service levels and building a truly customer-centric culture. We’ve restructured our team to align skills around service ownership, responsiveness, and accountability — anchored by a simple, guiding mindset:
+“Does this benefit our users?”
+Take automation, for example. Automation in itself is not the objective – value is. We’re not automating for its own sake—we’re doing it to improve outcomes that matter.
+“Automation is a means, not an end – real success lies in the value it creates for our users.”
+To serve our users better, we are rethinking how we deliver services – prioritising empathy, transparency, and measurable outcomes. To support this shift, we’re rolling out Service Level Agreements (SLAs), user feedback loops, and clear KPIs. These will help us measure impact, improve support, and make data-driven decisions with confidence. Later in the year, we are also going to introduce a business partner approach—embedding Digital Services more closely into the fabric of the organisation as well as its projects. This means working side by side with other teams and project participants to understand their goals, anticipate needs, and co-create solutions that generate real value. It’s not just about delivering IT, it’s about becoming trusted advisors who enable GÉANT’s people to achieve more.
+Could you share a moment or success story from the past year that you feel really shows the value of your team’s work?
+A standout achievement was the Infrastructure Refresh Project—a major effort to modernise GÉANT’s corebhosting environment. It significantly improved stability, performance, and scalability by migrating 657 virtual machines across high-availability data centres in Amsterdam and London – with zero downtime. This infrastructure now supports dual 100 Gbps interconnectivity, NVMe-powered storage, and activeactive architecture. Strong communication and coordination were cornerstones of this success, ensuring minimal disruption and clear engagement with stakeholders throughout the project.
+Finally, when you look ahead, what excites you most about the future of GÉANT, and your role in it?
+What excites me most is the opportunity to shape GÉANT’s future with purpose, agility, and resilience. With new leadership and the development of the 2026–2030 strategy underway, we’re at a pivotal moment. I see this as an opportunity to reimagine how our platforms, processes, and people can better enable the organisation—from core infrastructure through to frontline support. This is our opportunity to shift from being a supporting function to becoming a catalyst for transformation across GÉANT. I’m particularly looking forward to contributing to a strategy that balances innovation with sustainability and places measurable service value at the heart of everything we do. It’s not only about delivering technology but also creating meaningful outcomes for the people we serve. Whether through smarter automation, better data use, or the adoption of AI, our roadmap is full of potential, and I’m excited to explore that potential to deliver greater value to our users and take the Digital Services team on that journey with me.
+Behind every seamless collaboration and secure connection at GÉANT is the Digital Services team. If you’re part of the GÉANT community, get in touch with them to discover how their expertise, tools and platforms can support your work.
+This article is featured on CONNECT49, the latest issue of the GÉANT CONNECT Magazine!
+Read the full online magazine here

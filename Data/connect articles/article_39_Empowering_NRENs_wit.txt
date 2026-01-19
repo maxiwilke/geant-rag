@@ -1,0 +1,27 @@
+URL: https://connect.geant.org/2025/06/10/empowering-nrens-with-ai-sig-ais-role-in-knowledge-sharing-and-community-building
+TITLE: Empowering NRENs with AI: SIG-AI’s role in knowledge sharing and community building
+
+The intersection of Artificial Intelligence (AI) and NRENs often brings to mind AI-powered educational tools and services offered by NRENs to their users. However, this perspective overlooks the pervasive influence of AI across virtually all facets of NREN operations.
+Within the GÉANT project, AI’s presence across various work packages highlighted the need for enhanced knowledge sharing to foster synergy and avoid duplication of effort. Initially conceived as the Special Interest Group on AI (SIG-AI) for NRENs with a project-specific focus, the initiative quickly broadened its scope to become an overarching and independent platform. SIG-AI now aims to illuminate the comprehensive impact of AI on NRENs and their networks, encompassing domains such as cybersecurity, network automation, network production, and next-generation network evolution, notably through AIOps.
+We interviewed Leonie Schäfer, DFN, the SIG-AI coordinator, to share her insights on the new group.
+What is the purpose and mission of SIG-AI?
+The primary purpose is to establish a dedicated forum for professionals within the R&E Networking community to convene and exchange expertise and insights regarding the application of AI within the NREN context.
+Recognising the expansive nature of AI in general, our focus is specifically on NRENs and their operational domains. This targeted approach is not restrictive, as NRENs inherently encompass diverse thematic areas that increasingly intersect with AI, as exemplified by applications in cybersecurity and High-Performance Computing (HPC).
+Our mission is to foster collaboration and stimulate discussions on pertinent topics in AI research relevant to the NREN landscape.
+What role does SIG-AI play in building and strengthening the community?
+Recognising the increasing ubiquity of AI, SIG-AI provides a crucial platform for knowledge dissemination, the sharing of best practices, and the exploration of practical use cases within the NREN environment. It serves as a central meeting point for individuals with shared interests, spanning management, practitioners, and subject matter experts.
+Furthermore, SIG-AI offers a forum for the incubation of novel concepts that could potentially inform future iterations of the GÉANT project. While not an incubator itself, it acts as a preliminary stage, fostering the development of ideas and potentially evolving into an AI-focused GÉANT think tank.
+How do you envision SIG-AI growing or evolving over time?
+Building upon its objective of facilitating multi-level knowledge sharing, the future vision for SIGAI includes a greater emphasis on strategic considerations. We anticipate the SIG evolving into a recognised think tank, proactively monitoring global developments in AI and analysing their potential impact on the GÉANT community. Consequently, our discussions will increasingly encompass strategic topics such as AI policy, including the EU AI Act and its implications for GÉANT.
+What main themes has SIG-AI been exploring recently?
+Our initial meetings aimed to provide a broad overview of AI’s relevance to NRENs. We are now transitioning to a series of focused meetings. The second session addressed ‘AI and Cybersecurity,’ and the upcoming meeting will explore the requirements for ‘AI in Research’. Following this, we will collaborate with TF-EDU, the Task Force for Education to examine ‘AI and Education.’ A key objective is to foster synergy across the GÉANT community by partnering with various SIGs and TFs for joint sessions. Our agenda for the following year includes dedicated discussions on ‘AI and Network Automation’ and ‘AI and Next Generation Networks’.
+As the co-ordinator of SIG-AI, a member of the GPPC, and in your role within DFN and working with GÉANT, what is your experience of being a woman in STEM in this community?
+My experience as a woman in STEM within this community has underscored the importance of proactive engagement and ensuring one’s contributions are clearly visible. It is crucial to confidently articulate ideas and take ownership of one’s work. My interactions within GÉANT have been overwhelmingly positive, with my contributions consistently valued. Observing broader STEM environments, including working groups, I’ve noted that men often exhibit a natural tendency towards self-promotion and assertive presentation of their viewpoints. This is an area where I believe women can consciously cultivate and refine their professional strategies.
+For more information about SIG-AI visit
+www.community.geant.org/sig-ai
+This article is featured on CONNECT49, the latest issue of the GÉANT CONNECT Magazine!
+Read the full online magazine here
+Tags
+Artificial Intelligence
+Community Programme
+SIG-AI

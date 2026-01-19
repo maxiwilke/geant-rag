@@ -1,0 +1,23 @@
+URL: https://connect.geant.org/2025/06/10/artificial-intelligence-and-the-cloud-an-essential-synergy-to-revolutionize-healthcare
+TITLE: Artificial intelligence and the cloud: an essential synergy to revolutionize healthcare
+
+Words: Angela Cutrera, Sparkle
+One of the sectors most impacted by the adoption of IT technologies is healthcare, where we are witnessing an unprecedented transformation. In particular, AI technologies are redefining every aspect of healthcare, from early diagnosis to the personalization of therapies, from patient monitoring to the efficient management of hospital facilities. Another promising area is advanced medical education, where AI is opening the door to immersive experiences in dedicated meta-versal environments, allowing students and professionals to practice in virtual clinical scenarios with unprecedented levels of realism and anatomical accuracy. These digital learning spaces make it possible to simulate complex procedures, rare diseases and emergency situations in complete safety, dramatically accelerating the learning curve and improving the hands-on preparedness of healthcare professionals.
+However, this digital revolution can only reach its full potential if it is supported by a robust and reliable cloud infrastructure. The healthcare sector generates huge amounts of sensitive data every day, requiring real-time processing, maximum security and constant accessibility. This is where cloud computing comes in, providing the processing power, flexibility and reliability needed to support the most advanced artificial intelligence systems. The synergy between AI and the cloud is not just a technological opportunity, but an indispensable necessity for building the future of research: a future in which diagnostic accuracy, operational efficiency and personalization of care reach unprecedented levels.
+Beyond providing access to leading hyperscaler platforms, Sparkle is also bringing to the table innovative digital services developed internally. These are designed to address the specific needs of data-intensive and security-sensitive research projects, enabling institutions to explore new possibilities in advanced computing and digital collaboration.
+With Sparkle’s support, several European academic institutions and research centers have in recent years embraced the cloud for innovative digital solutions and services to support research agility and improved outcomes. Here’s a quick overview of some significant projects:
+in the Netherlands, Sparkle cooperated with the project by Princess Máxima Center for Pediatric Oncology to create a Comprehensive Childhood Cancer Commons, harmonize data collection of childhood cancer genomes and perform state-of-the-art data analyses to support innovations in childhood cancer research, diagnostics and treatment;
+in Belgium, we worked for the iCANDID project from the Katholieke Universiteit Leuven to develop a FAIR (Findable, Accessible, Interoperable Reusable) data hub for the Social Sciences and Humanities to speed-up data collection and preprocessing. With the University of Antwerp’s Human Molecular Genetics (HMG) research group Sparkle integrated cloud resources for genetic analysis and data storage on biomarkers for diseases;
+in Italy, the Università di Padova along with the Università Svizzera Italiana have been backed by Sparkle in their project to study federated machine learning cloud systems for precision medicine and to work on a second project focusing on a Machine Learning paradigm called Incremental Learning;
+in France, Sparkle supported the project by the University of Burgundy to build a training solution for health professionals and students in the Metaverse, and the project Deep Learning for GRAPHS by the Computer Laboratory of Burgundy aiming to automate the use of semantic content to make it accessible without further processing
+The importance of these projects underlines the strength of Sparkle’s offering to the European research sector and is part of the company’s wider commitment to reducing the complexity of the transition to the cloud and supporting the development of such a strategic sector for global wellbeing.
+With zero-cost data egress, tailored service options, and a long-term commitment to the research and education community, Sparkle empowers institutions across Europe to focus on what matters most – scientific discovery.
+Meet Sparkle at TNC25 to learn how we support research innovation through the
+OCRE Framework
+.
+Explore the full offering at:
+ocre.cloud.tisparkle.com
+This article is featured on CONNECT49, the latest issue of the GÉANT CONNECT Magazine!
+Read the full online magazine here
+Tags
+Sparkle
