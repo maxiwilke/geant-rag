@@ -159,7 +159,7 @@
         <mxCell id="tSlzb1Rr0yRHhzoS9Ass-22" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;Public Environment&lt;/b&gt;" vertex="1">
           <mxGeometry height="30" width="127" x="783" y="580" as="geometry" />
         </mxCell>
-        <mxCell id="tSlzb1Rr0yRHhzoS9Ass-23" edge="1" parent="1" source="TMPfDP6bVe7SLdsc_ObH-149" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;startArrow=blockThin;startFill=1;endArrow=blockThin;endFill=1;strokeWidth=3;" target="tSlzb1Rr0yRHhzoS9Ass-34">
+        <mxCell id="tSlzb1Rr0yRHhzoS9Ass-23" edge="1" parent="1" source="TMPfDP6bVe7SLdsc_ObH-149" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;startArrow=blockThin;startFill=1;endArrow=blockThin;endFill=1;strokeWidth=3;dashed=1;" target="tSlzb1Rr0yRHhzoS9Ass-34">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="165" y="528" as="targetPoint" />
           </mxGeometry>
