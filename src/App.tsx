@@ -257,7 +257,7 @@ const GeantChatbot: React.FC = () => {
                         onMouseOut={(e) => (e.currentTarget.style.opacity = '1')}
                         title={`Open: ${source.url}`}
                       >
-                        Source: {source.name}
+                        {source.name}
                       </a>
                     ) : (
                       <button
@@ -277,7 +277,7 @@ const GeantChatbot: React.FC = () => {
                           opacity: 0.6
                         }}
                       >
-                        Source: {source.name}
+                        {source.name}
                       </button>
                     )
                   ))}
