@@ -1,10 +1,13 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS, cross_origin
 from langchain_ollama import ChatOllama
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_core.messages import HumanMessage, AIMessage
 import logging
 from dotenv import load_dotenv
+from pathlib import Path
+import urllib.parse
+from typing import Optional  # Add this import
 
 load_dotenv()
 
@@ -28,6 +31,27 @@ CORS(app, resources={r"/api/*": {"origins": "*"}})
 # -------------------------------------------------------------------
 chat_histories = {}
 rag_chain = None
+
+# -------------------------------------------------------------------
+# URL utility functions
+# -------------------------------------------------------------------
+def extract_url_from_document(text: str) -> Optional[str]:  # Changed from str | None
+    """Extract URL from document text (expected to be in format 'URL: https://...')"""
+    lines = text.split('\n')
+    for line in lines:
+        if line.startswith('URL:'):
+            url = line.replace('URL:', '').strip()
+            return url if url else None
+    return None
+
+def build_local_pdf_url(source_path: str) -> Optional[str]:  # Changed from str | None
+    """Build a local PDF URL for files in the Data/ directory"""
+    try:
+        path = Path(source_path).resolve()
+        rel = path.relative_to(Path(DATA_PATH).resolve())
+    except Exception:
+        return None
+    return f"http://localhost:5000/api/pdf/{urllib.parse.quote(rel.as_posix())}"
 
 # -------------------------------------------------------------------
 # RAG initialization (LOCAL)
@@ -60,7 +84,20 @@ def get_rag_chain():
     return rag_chain
 
 # -------------------------------------------------------------------
-# Chat endpoint (UNCHANGED contract)
+# PDF serving endpoint
+# -------------------------------------------------------------------
+@app.route('/api/pdf/<path:filename>', methods=['GET'])
+def serve_pdf(filename):
+    """Serve local PDF files from the Data directory."""
+    if not filename.lower().endswith('.pdf'):
+        return jsonify({'error': 'Not a PDF'}), 400
+    try:
+        return send_from_directory(DATA_PATH, filename)
+    except FileNotFoundError:
+        return jsonify({'error': 'PDF not found'}), 404
+
+# -------------------------------------------------------------------
+# Chat endpoint
 # -------------------------------------------------------------------
 @app.route("/api/chat", methods=["POST"])
 @cross_origin()
@@ -89,6 +126,7 @@ def chat():
     if len(chat_history) > MAX_HISTORY_MESSAGES:
         chat_histories[session_id] = chat_history[-MAX_HISTORY_MESSAGES:]
 
+    # Format sources with URLs
     sources = []
     if docs:
         for doc in docs:
@@ -104,7 +142,7 @@ def chat():
     }), 200
 
 # -------------------------------------------------------------------
-# Health check (optional but useful)
+# Health check
 # -------------------------------------------------------------------
 @app.route("/api/health", methods=["GET"])
 def health():

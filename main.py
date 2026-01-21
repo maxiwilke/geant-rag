@@ -71,10 +71,24 @@ if __name__ == "__main__":
 
         print("\n--- Sources ---")
         if docs:
+            seen_sources = set()
             for i, doc in enumerate(docs, 1):
                 source = doc.metadata.get("source", "Unknown")
-                source = source.replace("\\", "/").split("/")[-1]
-                print(f"{i}. {source}")
+                source_name = source.replace("\\", "/").split("/")[-1]
+                
+                # Skip duplicates
+                if source_name in seen_sources:
+                    continue
+                seen_sources.add(source_name)
+                
+                # Get URL if available
+                url = doc.metadata.get("url")
+                
+                if url:
+                    print(f"{len(seen_sources)}. {source_name}")
+                    print(f"   URL: {url}")
+                else:
+                    print(f"{len(seen_sources)}. {source_name}")
         else:
             print("No sources found")
 

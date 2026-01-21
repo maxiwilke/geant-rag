@@ -41,19 +41,22 @@ class UTF8TextLoader(TextLoader):
 # ---------------- Utilities
 
 def extract_url_from_document(text: str) -> Optional[str]:
+    """Extract URL from document text (expected to be in format 'URL: https://...')"""
     for line in text.split("\n"):
         if line.startswith("URL:"):
-            return line.replace("URL:", "").strip() or None
+            url = line.replace("URL:", "").strip()
+            return url if url else None
     return None
 
 
 def build_local_pdf_url(source_path: str) -> Optional[str]:
+    """Build a local PDF URL for files in the Data/ directory"""
     try:
         path = Path(source_path).resolve()
         rel = path.relative_to(DATA_PATH.resolve())
     except Exception:
         return None
-    return f"https://geant-rag.onrender.com/api/pdf/{urllib.parse.quote(rel.as_posix())}"
+    return f"http://localhost:5000/api/pdf/{urllib.parse.quote(rel.as_posix())}"
 
 
 def format_chat_history(chat_history: List) -> str:
@@ -74,6 +77,7 @@ def format_chat_history(chat_history: List) -> str:
 def setup_vector_db(*, embeddings, rebuild: bool) -> Chroma:
     """
     Create or load Chroma DB using ONLY the provided embeddings.
+    Attaches URL metadata to documents for clickable references.
     """
 
     if embeddings is None:
@@ -111,13 +115,14 @@ def setup_vector_db(*, embeddings, rebuild: bool) -> Chroma:
     if not DATA_PATH.exists():
         raise RuntimeError("Data directory does not exist")
 
-    # Text files
+    # Text files - with URL extraction
     text_docs = DirectoryLoader(
         DATA_PATH,
         glob="**/*.txt",
         loader_cls=UTF8TextLoader
     ).load()
 
+    # Extract URLs and add to metadata
     for doc in text_docs:
         url = extract_url_from_document(doc.page_content)
         if url:
@@ -126,17 +131,18 @@ def setup_vector_db(*, embeddings, rebuild: bool) -> Chroma:
     documents.extend(text_docs)
     print(f"Loaded {len(text_docs)} text documents")
 
-    # PDFs
+    # PDFs - with local URL generation
     pdf_docs = DirectoryLoader(
         DATA_PATH,
         glob="**/*.pdf",
         loader_cls=PyPDFLoader
     ).load()
 
+    # Build local PDF URLs and add to metadata
     for doc in pdf_docs:
-        source = doc.metadata.get("source")
-        if source:
-            url = build_local_pdf_url(source)
+        source_path = doc.metadata.get("source")
+        if source_path:
+            url = build_local_pdf_url(source_path)
             if url:
                 doc.metadata["url"] = url
 
@@ -173,6 +179,7 @@ def setup_vector_db(*, embeddings, rebuild: bool) -> Chroma:
 def create_rag_chain(*, llm, embeddings, rebuild: bool = False):
     """
     Create RAG chain using caller-provided LLM and embeddings.
+    Returns documents with URL metadata for clickable references.
     """
 
     vectordb = setup_vector_db(
@@ -232,6 +239,7 @@ Sources:
         result = llm.invoke(messages)
         answer = result.content if hasattr(result, "content") else str(result)
 
+        # Return both answer and docs (docs now contain URL metadata)
         return answer, docs
 
     return rag_chain
