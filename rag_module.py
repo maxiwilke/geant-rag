@@ -20,6 +20,9 @@ from typing import Optional, List, Tuple
 SCRIPT_DIR = Path(__file__).parent.absolute()
 CHROMA_DB_PATH = SCRIPT_DIR / "chroma_db"
 DATA_PATH = SCRIPT_DIR / "Data"
+FACT_SHEET_PATH = "Data/fact_sheet.pdf" 
+FACT_SHEET = Path(FACT_SHEET_PATH).read_text(encoding="utf-8")
+
 
 # Chat history configuration
 MAX_HISTORY_MESSAGES = 6
@@ -83,7 +86,7 @@ def setup_vector_db(*, embeddings, rebuild: bool) -> Chroma:
     if embeddings is None:
         raise ValueError("Embeddings must be explicitly provided")
 
-    # 🔥 Hard reset on rebuild
+    # Hard reset on rebuild
     if rebuild and CHROMA_DB_PATH.exists():
         print("Rebuild requested → deleting existing Chroma DB")
         shutil.rmtree(CHROMA_DB_PATH)
@@ -194,8 +197,11 @@ def create_rag_chain(*, llm, embeddings, rebuild: bool = False):
     prompt = ChatPromptTemplate.from_messages([
         (
             "system",
-            """You are a helpful assistant that answers questions using ONLY the context below.
+            """You are a helpful assistant that answers questions using ONLY the factsheet, history, context and the question below.
 If the answer is not contained in the context, say you do not know.
+
+Fact Sheet (authoritative, always valid):
+{fact_sheet}
 
 Previous conversation:
 {chat_history}
@@ -231,10 +237,13 @@ Sources:
 
         messages = prompt.format_messages(
             question=question,
+            fact_sheet=FACT_SHEET,          # ← REQUIRED
             context=context,
             chat_history=format_chat_history(chat_history),
             source_list=source_list
         )
+
+
 
         result = llm.invoke(messages)
         answer = result.content if hasattr(result, "content") else str(result)
