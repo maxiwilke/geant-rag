@@ -30,6 +30,7 @@ CORS(
     resources={r"/api/*": {
         "origins": [
             "https://geantai-prod.vercel.app",
+            "https://www.geantai-prod.vercel.app",
             re.compile(r"https://geantai-prod-.*-maximilian-wilkes-projects\.vercel\.app"),
             "http://localhost:5173"
         ]
