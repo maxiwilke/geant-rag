@@ -1,0 +1,10 @@
+venv/
+react-chatbot/
+Data/connect articles/
+Data/project deliverables/
+Data/zenodo articles/
+chroma_db/
+*.pyc
+__pycache__/
+.DS_Store
+.git/

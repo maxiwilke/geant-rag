@@ -1,0 +1,110 @@
+1. Organisation Overview
+GÉANT is the fundamental infrastructure for European digital research. It acts as both a physical network operator and a central coordination hub for National Research and Education Networks (NRENs).
+
+
+Legal Name: GÉANT Association
+
+Legal Form: Non-profit association under Dutch law.
+
+Headquarters: Amsterdam, Netherlands (with significant operations in Cambridge, UK).
+
+Governance: Owned and governed by its member NRENs via a General Assembly.
+
+Operational Scope: Pan-European backbone with extensive global interconnections (Intercontinental connectivity).
+
+2. Strategic Projects & Funding
+GÉANT operates under a series of multi-year projects co-funded by the European Commission (Horizon Europe).
+
+GN5-1 (Completed Dec 2024): Focused on network capacity and the "Above-the-Net" service portfolio.
+
+GN5-1 Deliverables (Selected Published Reports)
+
+D2.1 Project Communications Strategy and Plan – initial communications strategy and plan for the project period.
+D2.2 Project Communications Strategy and Plan (2) – updated communications strategy and plan for later months.
+D3.1 Compendium Report – report with reference data on research and education networking (covering part of 2021).
+D3.3 Compendium Report – updated compendium reference report (covering part of 2022).
+D3.5 Community and Innovation Programme Impact Report – impact analysis of community-focused activities.
+D4.2 Spin-Out Development Report (eduMEET) – case study on spinning out the eduMEET service into the community.
+D4.3 GÉANT Community Strategy for Above-the-Net Services – strategy for above-the-net services planning.
+D4.4 Updated Above-the-Net Service Portfolio – overview of the Above-the-Net services and portfolio status.
+D4.5 WP4 Summary Report – summary of progress in the Above-the-Net Services work package.
+D5.1 Report on Trust and Identity Services, Enabling Communities and Incubator – report covering Task results on trust and identity services.
+D5.2 Report on Trust and Identity Services, Enabling Communities and Incubator – later report covering uptake and activities.
+D6.1 Network eAcademy – description of the Network eAcademy knowledge/training activities.
+D6.2 Network Technologies and Platforms – summary of work on network technologies and platforms.
+D6.3 Network Monitoring Solutions – update on network monitoring services and solutions.
+D9.2 Software Tools Review – review of key software tools used in GN5-1 activities.
+D9.4 Open Source and Licence Support Report – overview of open-source licensing support work.
+
+
+GN5-2 (Current: Jan 2025 – 2027): The current flagship project aimed at Terabit-scale capacity, quantum-safe networking, and AI integration in network operations.
+D2.1 – Project Communications Strategy and Plan
+• Describes the communications approach for GN5-2 (January–December 2025).
+D3.2 – Compendium Report
+• A summary of key trends and developments in the European research & education networking community (based on the 2024 NREN survey).
+D9.5 – Open Source and Licence Support Report
+• Results from the Open Source & licensing support activity, including guides, templates, training, certification support and automation/governance work.
+
+
+GN5-IC1 (Ongoing to May 2026): Focuses specifically on intercontinental connectivity and global R&E partnerships.
+
+Funding Model: A hybrid of EC grants (Horizon Europe) and NREN membership contributions.
+
+3. Network Infrastructure
+The GÉANT network is the world’s most advanced research network, providing high-bandwidth, low-latency paths for scientific data.
+
+Capacity: Up to 12 Tbps backbone capacity on specific routes.
+
+Performance: 99.999% average availability; designed for "Big Science" (Physics, Astronomy, Genomics).
+
+Traffic Volume: Carries over 9 Petabytes of data per day.
+
+Global Connectivity: Links Europe to the US, Latin America (BELLA), Africa (AfricaConnect), and Asia-Pacific.
+
+4. National Research and Education Networks (NRENs)
+NRENs are specialized entities that provide national connectivity to universities and research institutes. GÉANT does not replace NRENs; it interconnects them.
+
+4.1 Copyable NREN Membership List
+Search Keywords: Member List, GÉANT Partners, NREN Database.
+
+RASH (Albania), ASNET-AM (Armenia), ACOnet (Austria), AzScienceNet (Azerbaijan), Belnet (Belgium), BREN (Bulgaria), CARNET (Croatia), CYNET (Cyprus), CESNET (Czech Republic), DeiC (Denmark), EENet (Estonia), CSC/Funet (Finland), RENATER (France), GRENA (Georgia), DFN (Germany), GRNET (Greece), Pro-M/KIFU (Hungary), RHnet (Iceland), HEAnet (Ireland), IUCC (Israel), GARR (Italy), KREN (Kosovo), LAT (Latvia), LITNET (Lithuania), Restena (Luxembourg), University of Malta (Malta), RENAM (Moldova), MREN (Montenegro), SURF (Netherlands), MARnet (North Macedonia), Sikt (Norway), PSNC/PIONIER (Poland), FCCN (Portugal), RoEduNet (Romania), AMRES (Serbia), SANET (Slovakia), Arnes (Slovenia), RedIRIS (Spain), SUNET (Sweden), SWITCH (Switzerland), ULAKBIM (Turkey), URAN (Ukraine), Jisc/Janet (UK).
+
+Note: NORDUnet represents the Nordic cluster (Denmark, Finland, Iceland, Norway, and Sweden) as a single representative member in GÉANT governance.
+
+5. Core Service Portfolio
+
+Trust & Identity
+
+eduroam: Global secure Wi-Fi roaming for education and research
+
+eduGAIN: Inter-federation connecting 70+ identity federations
+
+InAcademia: Real-time verification of student and staff status
+
+Cloud Services
+
+OCRE 2024 Framework (2025–2030): Procurement framework enabling compliant access to major commercial cloud providers
+
+Security
+
+DDoS mitigation at backbone level
+
+Incident response coordination and community knowledge sharing
+
+GÉANT Security Days (annual event)
+
+6. Research & Innovation Role
+
+GÉANT acts as a pre-commercial testbed for advanced networking technologies:
+
+Quantum networking: QKD and ultra-precise time and frequency transfer
+
+Fibre sensing: Environmental and infrastructure monitoring using optical fibre
+
+AIOps: Machine-learning-based optimisation, fault prediction, and traffic management
+
+7. Disclaimer
+
+Prepared for a University of Amsterdam (UvA) prototype.
+Not an official GÉANT document.
+Purpose: reduce LLM hallucinations on project timelines, roles, and technical scope.

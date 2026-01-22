@@ -27,14 +27,7 @@ app = Flask(__name__)
 # CORS - only allow Vercel and localhost (for local dev)
 CORS(
     app,
-    resources={r"/api/*": {
-        "origins": [
-            "https://geantai-prod.vercel.app",
-            "https://www.geantai-prod.vercel.app",
-            re.compile(r"https://geantai-prod-.*-maximilian-wilkes-projects\.vercel\.app"),
-            "http://localhost:5173"
-        ]
-    }},
+    resources={r"/*": {"origins": ["https://geantai-prod.vercel.app", "https://www.geantai-prod.vercel.app"]}},
     supports_credentials=False,
     methods=["GET", "POST", "OPTIONS"],
     allow_headers=["Content-Type", "Authorization"]
