@@ -16,19 +16,32 @@ import urllib.parse
 from pathlib import Path
 from typing import Optional, List, Tuple
 
+# Progress bar support
+try:
+    from tqdm import tqdm
+    HAS_TQDM = True
+except ImportError:
+    HAS_TQDM = False
+    print("Install tqdm for progress bars: pip install tqdm")
+
 # ---------------- Paths & constants
 SCRIPT_DIR = Path(__file__).parent.absolute()
 CHROMA_DB_PATH = SCRIPT_DIR / "chroma_db"
 DATA_PATH = SCRIPT_DIR / "Data"
 FACT_SHEET_PATH = DATA_PATH / "fact_sheet.txt"
+STRUCTURAL_CONTEXT_PATH = DATA_PATH / "project_annex"  # No space in folder name
 
 # Chat history configuration
 MAX_HISTORY_MESSAGES = 6
 
 # Chunking configuration
-CHUNK_SIZE = 512
-CHUNK_OVERLAP = 100
-RETRIEVAL_K = 8
+CHUNK_SIZE = 800  # Good balance of context and granularity
+CHUNK_OVERLAP = 150  # More overlap to preserve continuity
+RETRIEVAL_K = 14  # Total chunks: 4 structural + 10 regular
+RETRIEVAL_K_EXTENDED = 20  # Retrieve more candidates for prioritization
+
+# Embedding batch size for progress tracking
+EMBEDDING_BATCH_SIZE = 100
 
 
 # ---------------- Fact Sheet Loader
@@ -117,6 +130,7 @@ def setup_vector_db(*, embeddings, rebuild: bool) -> Chroma:
     """
     Create or load Chroma DB using ONLY the provided embeddings.
     Attaches URL metadata to documents for clickable references.
+    Marks structural context PDFs with special metadata for prioritization.
     """
 
     if embeddings is None:
@@ -172,6 +186,7 @@ def setup_vector_db(*, embeddings, rebuild: bool) -> Chroma:
         url = extract_url_from_document(doc.page_content)
         if url:
             doc.metadata["url"] = url
+        doc.metadata["document_type"] = "regular"
 
     documents.extend(text_docs)
     print(f"Loaded {len(text_docs)} text documents")
@@ -189,12 +204,25 @@ def setup_vector_db(*, embeddings, rebuild: bool) -> Chroma:
                 if 'fact_sheet' not in doc.metadata.get('source', '').lower()]
 
     # Build URLs and add to metadata
+    structural_pdfs_found = set()
     for doc in pdf_docs:
         source_path = doc.metadata.get("source")
         if source_path:
             url = build_local_pdf_url(source_path)
             if url:
                 doc.metadata["url"] = url
+            
+            # Mark structural context PDFs
+            if STRUCTURAL_CONTEXT_PATH.exists() and str(STRUCTURAL_CONTEXT_PATH) in source_path:
+                doc.metadata["document_type"] = "structural_context"
+                doc.metadata["priority"] = "high"
+                # Only print once per unique PDF file
+                pdf_name = Path(source_path).name
+                if pdf_name not in structural_pdfs_found:
+                    structural_pdfs_found.add(pdf_name)
+                    print(f"  → Marked as STRUCTURAL CONTEXT: {pdf_name}")
+            else:
+                doc.metadata["document_type"] = "regular"
 
     documents.extend(pdf_docs)
     print(f"Loaded {len(pdf_docs)} PDF documents")
@@ -214,13 +242,44 @@ def setup_vector_db(*, embeddings, rebuild: bool) -> Chroma:
     chunks = splitter.split_documents(documents)
     print(f"Split into {len(chunks)} chunks")
 
-    vectordb = Chroma.from_documents(
-        documents=chunks,
-        embedding=embeddings,
-        persist_directory=str(CHROMA_DB_PATH)
-    )
+    # Embed documents in batches with progress bar
+    print(f"\nGenerating embeddings for {len(chunks)} chunks...")
+    print("This may take 10-30 minutes depending on your CPU/GPU...")
+    
+    vectordb = None
+    
+    if HAS_TQDM:
+        # With progress bar
+        batch_iterator = tqdm(
+            range(0, len(chunks), EMBEDDING_BATCH_SIZE),
+            desc="Embedding chunks",
+            unit="batch"
+        )
+    else:
+        # Without progress bar - just print updates
+        batch_iterator = range(0, len(chunks), EMBEDDING_BATCH_SIZE)
+        total_batches = (len(chunks) + EMBEDDING_BATCH_SIZE - 1) // EMBEDDING_BATCH_SIZE
+    
+    for i, batch_start in enumerate(batch_iterator):
+        batch_end = min(batch_start + EMBEDDING_BATCH_SIZE, len(chunks))
+        batch = chunks[batch_start:batch_end]
+        
+        if vectordb is None:
+            # Create initial DB with first batch
+            vectordb = Chroma.from_documents(
+                documents=batch,
+                embedding=embeddings,
+                persist_directory=str(CHROMA_DB_PATH)
+            )
+        else:
+            # Add subsequent batches
+            vectordb.add_documents(batch)
+        
+        # Print progress if no tqdm
+        if not HAS_TQDM:
+            print(f"  Processed batch {i+1}/{total_batches} ({batch_end}/{len(chunks)} chunks)")
 
-    print(f"Vector DB created with {len(chunks)} vectors")
+    print(f"\n✓ Vector DB created with {len(chunks)} vectors")
     return vectordb
 
 
@@ -230,6 +289,7 @@ def create_rag_chain(*, llm, embeddings, rebuild: bool = False):
     """
     Create RAG chain using caller-provided LLM and embeddings.
     Returns documents with URL metadata for clickable references.
+    Prioritizes structural context documents in retrieval.
     """
 
     vectordb = setup_vector_db(
@@ -237,27 +297,34 @@ def create_rag_chain(*, llm, embeddings, rebuild: bool = False):
         rebuild=rebuild
     )
 
+    # Retrieve more documents to allow prioritization
     retriever = vectordb.as_retriever(
-        search_kwargs={"k": RETRIEVAL_K}
+        search_kwargs={"k": RETRIEVAL_K_EXTENDED}
     )
 
     prompt = ChatPromptTemplate.from_messages([
     (
         "system",
-        """You are a helpful assistant that answers questions using ONLY the factsheet, history, context and the question below.
-If the answer is not contained in the context, say you do not know.
+        """You are analyzing excerpts from GÉANT network project documentation.
 
-Fact Sheet (authoritative, always valid):
+DOCUMENTS YOU ARE ANALYZING:
+- GN5-1 Technical Annex (GÉANT flagship project phase 1)
+- GN5-2 Technical Annex (GÉANT flagship project phase 2)
+- GÉANT Project Fact Sheet
+
+YOUR TASK: Answer questions using ONLY the document excerpts provided below. These excerpts are real text extracted from the actual project documents.
+
+FACT SHEET:
 {fact_sheet}
 
-Previous conversation:
+PREVIOUS MESSAGES:
 {chat_history}
 
-Context:
+===== DOCUMENT EXCERPTS FROM: {source_list} =====
 {context}
+===== END OF DOCUMENT EXCERPTS =====
 
-Sources:
-{source_list}"""
+When asked about GN5-1 or GN5-2, use the excerpts above. DO NOT claim these are unknown projects."""
     ),
     ("human", "{question}")
 ])
@@ -265,20 +332,38 @@ Sources:
     def rag_chain(question: str, chat_history: List = None) -> Tuple[str, List]:
         chat_history = chat_history or []
 
-        docs = retriever.invoke(question)
+        # Retrieve extended set of documents
+        all_docs = retriever.invoke(question)
+
+        # Separate structural vs regular docs
+        structural_docs = [d for d in all_docs if d.metadata.get("document_type") == "structural_context"]
+        regular_docs = [d for d in all_docs if d.metadata.get("document_type") != "structural_context"]
+
+        # Prioritize structural context - 4 structural + 10 regular
+        max_structural = min(len(structural_docs), 4)  # Up to 4 structural chunks
+        remaining_slots = RETRIEVAL_K - max_structural
+        
+        docs = structural_docs[:max_structural] + regular_docs[:remaining_slots]
+        
+        if structural_docs:
+            print(f"→ Retrieved {len(structural_docs[:max_structural])} structural context chunks + {len(regular_docs[:remaining_slots])} regular chunks")
 
         sources = []
         seen = set()
         for doc in docs:
             src = doc.metadata.get("source", "Unknown").replace("\\", "/").split("/")[-1]
             if src not in seen:
-                sources.append(src)
+                # Mark structural sources
+                if doc.metadata.get("document_type") == "structural_context":
+                    sources.append(f"{src} [STRUCTURAL]")
+                else:
+                    sources.append(src)
                 seen.add(src)
 
         source_list = "\n".join(f"{i+1}. {s}" for i, s in enumerate(sources))
 
         context = "\n\n".join(
-            f"--- Source: {doc.metadata.get('source', 'Unknown')} ---\n{doc.page_content}"
+            f"--- Source: {doc.metadata.get('source', 'Unknown')} [{doc.metadata.get('document_type', 'regular').upper()}] ---\n{doc.page_content}"
             for doc in docs
         )
 

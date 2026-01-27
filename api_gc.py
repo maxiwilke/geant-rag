@@ -47,9 +47,10 @@ def get_rag_chain():
             if not groq_api_key:
                 raise RuntimeError("GROQ_API_KEY not set")
 
+            # UPDATED: Optimized LLM settings for RAG
             llm = ChatGroq(
                 model="llama-3.3-70b-versatile",
-                temperature=0.7,
+                temperature=0.1,  # Lower for factual responses (was 0.7)
                 groq_api_key=groq_api_key
             )
             logger.info("LLM initialized")
@@ -66,10 +67,15 @@ def get_rag_chain():
 
             # Create the RAG chain
             logger.info("Creating RAG chain...")
+            
+            # TEMPORARY: Force rebuild on first run to get structural metadata
+            # Remove this after one successful deployment
+            rebuild_db = os.getenv("REBUILD_DB", "false").lower() == "true"
+            
             rag_chain = create_rag_chain(
                 llm=llm,
                 embeddings=embeddings,
-                rebuild=False
+                rebuild=rebuild_db  # Will rebuild if REBUILD_DB=true
             )
             logger.info(f"RAG chain created: {type(rag_chain)}")
 
@@ -82,7 +88,6 @@ def get_rag_chain():
             raise
     
     return rag_chain
-
 
 
 @app.route("/api/chat", methods=["POST"])
@@ -101,9 +106,15 @@ def chat():
 
     chat_history = chat_histories[session_id]
 
-    logger.info(f"Question: {question[:60]}")
+    logger.info(f"Question: {question}")
 
     answer, docs = chain(question, chat_history)
+
+    # DEBUG: Log retrieval stats (optional - can remove in production)
+    logger.info(f"Retrieved {len(docs)} chunks")
+    if docs:
+        structural_count = sum(1 for d in docs if d.metadata.get('document_type') == 'structural_context')
+        logger.info(f"  {structural_count} structural, {len(docs) - structural_count} regular")
 
     chat_history.append(HumanMessage(content=question))
     chat_history.append(AIMessage(content=answer))
@@ -111,13 +122,27 @@ def chat():
     if len(chat_history) > MAX_HISTORY_MESSAGES:
         chat_histories[session_id] = chat_history[-MAX_HISTORY_MESSAGES:]
 
+    # Format sources with deduplication and type info
     sources = []
+    seen_sources = set()
     if docs:
         for doc in docs:
             source = doc.metadata.get("source", "Unknown")
-            source = source.replace("\\", "/").split("/")[-1]
+            source_name = source.replace("\\", "/").split("/")[-1]
+            
+            # Skip duplicates
+            if source_name in seen_sources:
+                continue
+            seen_sources.add(source_name)
+            
             url = doc.metadata.get("url")
-            sources.append({"name": source, "url": url})
+            doc_type = doc.metadata.get("document_type", "regular")
+            
+            sources.append({
+                "name": source_name,
+                "url": url,
+                "type": doc_type
+            })
 
     return jsonify({
         "answer": answer,
@@ -154,4 +179,3 @@ def serve_pdf(filename):
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 8080))
     app.run(host="0.0.0.0", port=port)
-

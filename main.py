@@ -60,6 +60,15 @@ if __name__ == "__main__":
         print("\nSearching documents...\n")
         answer, docs = rag_chain(question, chat_history)
 
+        # ADD DEBUG LINES HERE
+        print("\n=== DEBUG: Retrieved chunks ===")
+        for i, doc in enumerate(docs[:3]):  # Show first 3 chunks
+            print(f"\nChunk {i+1}:")
+            print(f"Type: {doc.metadata.get('document_type')}")
+            print(f"Source: {doc.metadata.get('source', 'Unknown')}")
+            print(f"Preview: {doc.page_content[:200]}...")
+        print("=== END DEBUG ===\n")
+
         print("Answer:")
         print(answer)
 
@@ -76,12 +85,10 @@ if __name__ == "__main__":
                 source = doc.metadata.get("source", "Unknown")
                 source_name = source.replace("\\", "/").split("/")[-1]
                 
-                # Skip duplicates
                 if source_name in seen_sources:
                     continue
                 seen_sources.add(source_name)
                 
-                # Get URL if available
                 url = doc.metadata.get("url")
                 
                 if url:

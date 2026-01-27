@@ -7,7 +7,7 @@ import logging
 from dotenv import load_dotenv
 from pathlib import Path
 import urllib.parse
-from typing import Optional  # Add this import
+from typing import Optional
 
 load_dotenv()
 
@@ -35,7 +35,7 @@ rag_chain = None
 # -------------------------------------------------------------------
 # URL utility functions
 # -------------------------------------------------------------------
-def extract_url_from_document(text: str) -> Optional[str]:  # Changed from str | None
+def extract_url_from_document(text: str) -> Optional[str]:
     """Extract URL from document text (expected to be in format 'URL: https://...')"""
     lines = text.split('\n')
     for line in lines:
@@ -44,7 +44,7 @@ def extract_url_from_document(text: str) -> Optional[str]:  # Changed from str |
             return url if url else None
     return None
 
-def build_local_pdf_url(source_path: str) -> Optional[str]:  # Changed from str | None
+def build_local_pdf_url(source_path: str) -> Optional[str]:
     """Build a local PDF URL for files in the Data/ directory"""
     try:
         path = Path(source_path).resolve()
@@ -61,13 +61,16 @@ def get_rag_chain():
     if rag_chain is None:
         logger.info("Initializing LOCAL RAG chain (Ollama + HF embeddings)...")
 
-        # Local LLM via Ollama
+        # Local LLM via Ollama - OPTIMIZED FOR RAG
         llm = ChatOllama(
             model="llama3.2:latest",
-            temperature=0.7
+            temperature=0.1,  # Low temperature for factual responses
+            num_ctx=4096,     # Ensure enough context window
+            top_p=0.9,        # Focused sampling
+            repeat_penalty=1.1  # Reduce repetition
         )
 
-        # ✅ Stable local embeddings (NO Ollama dependency)
+        # Stable local embeddings (NO Ollama dependency)
         embeddings = HuggingFaceEmbeddings(
             model_name="sentence-transformers/all-MiniLM-L6-v2",
             encode_kwargs={"normalize_embeddings": True}
@@ -116,9 +119,15 @@ def chat():
 
     chat_history = chat_histories[session_id]
 
-    logger.info(f"Question: {question[:80]}")
+    logger.info(f"Question: {question}")
 
     answer, docs = chain(question, chat_history)
+
+    # DEBUG: Log what was retrieved (optional - remove in production)
+    logger.info(f"Retrieved {len(docs)} chunks")
+    if docs:
+        structural_count = sum(1 for d in docs if d.metadata.get('document_type') == 'structural_context')
+        logger.info(f"  {structural_count} structural, {len(docs) - structural_count} regular")
 
     chat_history.append(HumanMessage(content=question))
     chat_history.append(AIMessage(content=answer))
@@ -128,12 +137,25 @@ def chat():
 
     # Format sources with URLs
     sources = []
+    seen_sources = set()
     if docs:
         for doc in docs:
             source = doc.metadata.get("source", "Unknown")
-            source = source.replace("\\", "/").split("/")[-1]
+            source_name = source.replace("\\", "/").split("/")[-1]
+            
+            # Skip duplicates
+            if source_name in seen_sources:
+                continue
+            seen_sources.add(source_name)
+            
             url = doc.metadata.get("url")
-            sources.append({"name": source, "url": url})
+            doc_type = doc.metadata.get("document_type", "regular")
+            
+            sources.append({
+                "name": source_name,
+                "url": url,
+                "type": doc_type
+            })
 
     return jsonify({
         "answer": answer,
