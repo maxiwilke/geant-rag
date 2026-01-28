@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" version="29.3.3">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36" version="29.3.6">
   <diagram name="Seite-1" id="9eG-OibSuVaryqahU_g4">
-    <mxGraphModel dx="1072" dy="731" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2336" pageHeight="1654" math="0" shadow="0">
+    <mxGraphModel dx="1230" dy="606" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2336" pageHeight="1654" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -13,7 +13,7 @@
         <mxCell id="tSlzb1Rr0yRHhzoS9Ass-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
           <mxGeometry height="170" width="510" x="250" y="241" as="geometry" />
         </mxCell>
-        <mxCell id="TMPfDP6bVe7SLdsc_ObH-19" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontStyle=0" value="Geant staff" vertex="1">
+        <mxCell id="TMPfDP6bVe7SLdsc_ObH-19" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontStyle=0" value="GÉANT staff" vertex="1">
           <mxGeometry height="98" width="50" x="1012" y="478" as="geometry" />
         </mxCell>
         <mxCell id="TMPfDP6bVe7SLdsc_ObH-99" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
@@ -181,8 +181,8 @@
         <mxCell id="tSlzb1Rr0yRHhzoS9Ass-34" parent="1" style="sketch=0;outlineConnect=0;fontColor=light-dark(#232F3E,#000000);gradientColor=none;fillColor=light-dark(#000000,#000000);strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.sagemaker_model;strokeWidth=0;fontFamily=Helvetica;labelBackgroundColor=light-dark(#FFFFFF,#FFFFFF);autosize=1;resizable=1;horizontal=1;labelBorderColor=none;textShadow=0;movable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;fillStyle=solid;" value="&lt;span&gt;Ollama3.2 API (Groq)&lt;/span&gt;" vertex="1">
           <mxGeometry height="60" width="60" x="104.99999999999999" y="498" as="geometry" />
         </mxCell>
-        <mxCell id="tSlzb1Rr0yRHhzoS9Ass-35" parent="1" style="sketch=0;outlineConnect=0;fontColor=light-dark(#232F3E,#000000);gradientColor=none;fillColor=light-dark(#000000,#000000);strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.sagemaker_model;strokeWidth=0;fontFamily=Helvetica;labelBackgroundColor=light-dark(#FFFFFF,#FFFFFF);autosize=1;resizable=1;horizontal=1;labelBorderColor=none;textShadow=0;movable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;fillStyle=solid;" value="&lt;span&gt;RAG&lt;/span&gt;" vertex="1">
-          <mxGeometry height="60" width="60" x="533" y="298.4" as="geometry" />
+        <mxCell id="tSlzb1Rr0yRHhzoS9Ass-35" parent="1" style="sketch=0;outlineConnect=0;fontColor=light-dark(#232F3E,#000000);gradientColor=none;fillColor=light-dark(#000000,#000000);strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.sagemaker_model;strokeWidth=0;fontFamily=Helvetica;labelBackgroundColor=light-dark(#FFFFFF,#FFFFFF);autosize=1;resizable=1;horizontal=1;labelBorderColor=none;textShadow=0;movable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;fillStyle=solid;" value="&lt;span&gt;LangChain RAG&lt;/span&gt;" vertex="1">
+          <mxGeometry height="61.6" width="61.6" x="534.7" y="297.59999999999997" as="geometry" />
         </mxCell>
         <mxCell id="tSlzb1Rr0yRHhzoS9Ass-36" parent="1" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://icons.diagrams.net/icon-cache1/Boxicons_Logos-2642/bxl-react-1284.svg" value="" vertex="1">
           <mxGeometry height="65" width="65" x="783.5" y="295.9" as="geometry" />
