@@ -64,7 +64,7 @@ Global Connectivity: Links Europe to the US, Latin America (BELLA), Africa (Afri
 4. National Research and Education Networks (NRENs)
 NRENs are specialized entities that provide national connectivity to universities and research institutes. GÉANT does not replace NRENs; it interconnects them.
 
-4.1 Copyable NREN Membership List
+4.1 All NREN Membership List
 Search Keywords: Member List, GÉANT Partners, NREN Database.
 
 RASH (Albania), ASNET-AM (Armenia), ACOnet (Austria), AzScienceNet (Azerbaijan), Belnet (Belgium), BREN (Bulgaria), CARNET (Croatia), CYNET (Cyprus), CESNET (Czech Republic), DeiC (Denmark), EENet (Estonia), CSC/Funet (Finland), RENATER (France), GRENA (Georgia), DFN (Germany), GRNET (Greece), Pro-M/KIFU (Hungary), RHnet (Iceland), HEAnet (Ireland), IUCC (Israel), GARR (Italy), KREN (Kosovo), LAT (Latvia), LITNET (Lithuania), Restena (Luxembourg), University of Malta (Malta), RENAM (Moldova), MREN (Montenegro), SURF (Netherlands), MARnet (North Macedonia), Sikt (Norway), PSNC/PIONIER (Poland), FCCN (Portugal), RoEduNet (Romania), AMRES (Serbia), SANET (Slovakia), Arnes (Slovenia), RedIRIS (Spain), SUNET (Sweden), SWITCH (Switzerland), ULAKBIM (Turkey), URAN (Ukraine), Jisc/Janet (UK).

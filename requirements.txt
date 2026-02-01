@@ -1,14 +1,25 @@
 flask
 flask-cors
-langchain
-langchain-community
-langchain-chroma
-langchain-groq
-langchain-huggingface
-chromadb
-pypdf
-python-dotenv
 gunicorn
+python-dotenv
+
+# LangChain core
+langchain
+langchain-core
+langchain-community
+
+# LLM providers
+langchain-groq
+
+# Embeddings
+langchain-huggingface
 sentence-transformers
-torch
 transformers
+torch
+
+# Vector store
+langchain-chroma
+chromadb
+
+# Document loaders
+pypdf

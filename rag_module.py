@@ -308,9 +308,10 @@ def create_rag_chain(*, llm, embeddings, rebuild: bool = False):
         """You are analyzing excerpts from GÉANT network project documentation.
 
 DOCUMENTS YOU ARE ANALYZING:
-- GN5-1 Technical Annex (GÉANT flagship project phase 1)
+- ALWAYS look into the fact_sheet first
+- Look into GN5-1 Technical Annex for the GN5-1 project(GÉANT flagship project phase 1)
 - GN5-2 Technical Annex (GÉANT flagship project phase 2)
-- GÉANT Project Fact Sheet
+- All PDFS and articles on Zenodo and Géant.org
 
 YOUR TASK: Answer questions using ONLY the document excerpts provided below. These excerpts are real text extracted from the actual project documents.
 
