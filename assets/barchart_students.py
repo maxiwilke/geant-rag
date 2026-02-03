@@ -10,7 +10,7 @@ fig.add_trace(go.Bar(
     ],
     y=[25, 6],
     marker_color=["#2ecc71", "#e74c3c"],
-    text=["25 (80.6%)", "6 (19.4%)"],
+    text=["27 (87.1%)", "4 (12.9%)"],
     textposition='outside',
     showlegend=False
 ))
